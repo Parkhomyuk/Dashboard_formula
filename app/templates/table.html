@@ -1,0 +1,124 @@
+<div ng-controller="tableController as table">
+    <div class="header row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <label class="switch">
+                first name:<input type="checkbox" checked value="0"/>
+                <span></span>
+            </label>
+
+
+        </div>
+        <div class="col-md-3"><button type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle" aria-hidden="true">Export to Excel</i></button></div>
+        <h3>{{table.settings.title.title}}  </h3>
+    </div>
+
+<table class="table table-bordered smarttable" id="tableUser" >
+
+    <thead>
+    <tr>
+        <th class="align-right zero" style="border: 1px solid black " >Manage</th>
+        <th class="align-right" style="border: 1px solid black " ng-repeat="column in table.settings.columns" ng-if="column.display=='yes'">{{column.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('id')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('id')"></span>
+        </th>
+    </tr>
+
+    <tr class="smart">
+        <th class="search" style="width: 10%"> <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="first.upAddUpdate('add')" style="border: 1px solid black; padding: 1vh; border-radius: 50px; margin-right: 1vw"> </span>|<span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="margin-left: 1vw"> </span> </th>
+        <th class="search" ng-repeat="sear in table.settings.columns " ng-if="sear.display=='yes'" style="{{sear.width}}">
+            <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" /></th>
+    </tr>
+
+
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in  items.data">
+
+        <td id ="{{item}}" class="zero" style="background-color: #f8ffda; border: 1px solid #0f0f0f">
+            <div id="{{item.id+'a'}}">
+                <span   class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"> </span>
+                |
+                <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeItem(item.id)"> </span>
+            </div>
+            <!--<div id="{{item.id+'b'}}" hidden>
+                <span   class="glyphicon glyphicon-ok" aria-hidden="true" (click)="onUpdateUsers(item)"></span>
+                |
+                <span  class="glyphicon glyphicon-remove" aria-hidden="true" (click)="updateFalse(item)"> </span>
+            </div>-->
+        </td >
+
+        <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.id}}</td>
+        <td class="first" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.role_id}}</td>
+
+        <td id="{{item.id+'d'}}" class="second" ngClass="nowrap" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.username}}</td>
+        <td id="{{item.id+'e'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.password}}</td>
+
+        <td id="{{item.id+'g'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.first_name}}</td>
+
+        <td id="{{item.id+'g2'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.last_name}}</td>
+
+        <td id="{{item.id+'g3'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.middle_name}}</td>
+
+        <td id="{{item.id+'i'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.birthday| date:"dd/MM/yyyy"}}</td>
+
+        <td id="{{item.id+'k'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.email}}</td>
+
+        <td id="{{item.id+'k2'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.new_email}}</td>
+
+        <td id="{{item.id+'m'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.telephone_number}}</td>
+
+        <td id="{{item.id+'o'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.status}}</td>
+
+
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+<div class="pagers "  >
+
+    <div class="row">
+
+        <div class="btn-group col-md-6">
+            <label  >Members {{count}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
+
+        </div>
+        <div class="form-group col-md-6">
+            <label class="col-md-6 control-label">count of rows on page<br><span>*by default 100</span></label>
+            <div class="col-md-6">
+                <select class="form-control select" data-style="btn-success" ng-model="numberRows" >
+
+
+                    <option ng-repeat="count in chooseCountNumber"  >{{count}}</option>
+
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div>{{table.settings.columns.telephon_number.mod_name}}</div>
+    <div>{{table.settings.columns.first_name.mod_name}}</div>
+    <div>{{table.settings.columns.last_name.mod_name}}</div>
+    <div>{{table.settings.columns.middle_name.mod_name}}</div>
+
+    <div class="btn-group pull-right">
+        <ul class="pagination" >
+            <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
+            <li ng-repeat="page in arrayCountPage"  >
+                <a ng-click="setPage(page)"    href="#" >{{page}}</a>
+            </li>
+            <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
+        </ul>
+    </div>
+
+
+</div>
+</div>
+
+</div>
