@@ -2802,8 +2802,11 @@ blockquote.pull-right {
 }
 .switch span {
   position: relative;
-  width: 10px;
+  /*width: 50px;
   height: 30px;
+*/
+  width: 3vw;
+  height: 2vw;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
   border-radius: 30px;

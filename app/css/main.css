@@ -233,9 +233,13 @@ input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s eas
 input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
 
 
-.header>h3{
+.header>h3, .check{
   margin-left: 3vw;
-  margin-right: 1vw;
+  margin-right: 3vw;
+}
+.order{
+  margin-left: 3vw;
+
 }
 .smart > th {
   text-align: center; }

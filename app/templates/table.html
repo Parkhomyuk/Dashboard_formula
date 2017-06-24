@@ -1,24 +1,55 @@
 <div ng-controller="tableController as table">
     <div class="header row">
-        <div class="col-md-1"></div>
-        <div class="col-md-8">
-            <label class="switch">
-                first name:<input type="checkbox" checked value="0"/>
-                <span></span>
-            </label>
 
+        <div class="check col-md-11">
+            <div class="row">
+                <div class="{{table.settings.count.number}}" ng-repeat="item in table.settings.columns">
+                    <div class="input-group row">
+                        <span class="input-group-addon">
+                             <input type="checkbox" aria-label="..." ng-model="item.display" >
+                          </span>
+                              <input type="text" class="form-control" aria-label="..." value={{item.title}}>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
 
+            </div><!-- /.row -->
         </div>
-        <div class="col-md-3"><button type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle" aria-hidden="true">Export to Excel</i></button></div>
-        <h3>{{table.settings.title.title}}  </h3>
+        <div class="row">
+        <div class="order col-md-10">
+            <div class="{{table.settings.count.number}}" ng-repeat="itemSelect in table.settings.columns">
+                <div class="input-group row">
+                    <span class="input-group-addon">
+            <select ng-model="select.order">
+                <!--<option value = "0" label = "{{itemSelect.order}}"></option>-->
+                <option ng-repeat="select in table.settings.columns" value="{{select.order}}" >
+
+                    {{select.order}}
+                </option>
+            </select>
+                        </span>
+                <input type="text" class="form-control" aria-label="..." value={{itemSelect.title}}>
+                 </div>
+            </div>
+        </div>
+        <div class="order col-md-1">
+            <button class="btn btn-primary" ng-click="table.orderColumns()">Order</button>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8"><h3>{{table.settings.title.title}}  </h3></div>
+        <div class="col-md-3"><button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle" aria-hidden="true">Export to Excel</i></button></div>
+        </div>
+
+
     </div>
 
-<table class="table table-bordered smarttable" id="tableUser" >
+<table class="table table-bordered smarttable" id="tableUser" style="width: 98%" >
 
     <thead>
     <tr>
         <th class="align-right zero" style="border: 1px solid black " >Manage</th>
-        <th class="align-right" style="border: 1px solid black " ng-repeat="column in table.settings.columns" ng-if="column.display=='yes'">{{column.title}}<br>
+        <th class="align-right" style="border: 1px solid black " ng-repeat="column in table.settings.columns | sortBy | orderBy:'order'" ng-if="column.display">{{column.title}}<br>
                 <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('id')">
 
                 </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('id')"></span>
@@ -27,8 +58,8 @@
 
     <tr class="smart">
         <th class="search" style="width: 10%"> <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="first.upAddUpdate('add')" style="border: 1px solid black; padding: 1vh; border-radius: 50px; margin-right: 1vw"> </span>|<span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="margin-left: 1vw"> </span> </th>
-        <th class="search" ng-repeat="sear in table.settings.columns " ng-if="sear.display=='yes'" style="{{sear.width}}">
-            <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" /></th>
+        <th class="search" ng-repeat="sear in table.settings.columns | sortBy | orderBy:'order'" ng-if="sear.display" style="{{sear.width}}">
+            <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" ng-if="sear.search"/></th>
     </tr>
 
 
@@ -83,29 +114,36 @@
 
     <div class="row">
 
-        <div class="btn-group col-md-6">
-            <label  >Members {{count}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
+            <div class="btn-group col-md-6">
+                <label  >Members {{count}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
 
-        </div>
-        <div class="form-group col-md-6">
-            <label class="col-md-6 control-label">count of rows on page<br><span>*by default 100</span></label>
-            <div class="col-md-6">
-                <select class="form-control select" data-style="btn-success" ng-model="numberRows" >
-
-
-                    <option ng-repeat="count in chooseCountNumber"  >{{count}}</option>
-
-                </select>
             </div>
-        </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-6 control-label">count of rows on page<br><span>*by default 100</span></label>
+                <div class="col-md-6">
+                    <select class="form-control select" data-style="btn-success" ng-model="numberRows" >
+
+
+                        <option ng-repeat="count in chooseCountNumber"  >{{count}}</option>
+
+                    </select>
+                </div>
+            </div>
+
 
     </div>
+
 
 
     <div>{{table.settings.columns.telephon_number.mod_name}}</div>
     <div>{{table.settings.columns.first_name.mod_name}}</div>
     <div>{{table.settings.columns.last_name.mod_name}}</div>
     <div>{{table.settings.columns.middle_name.mod_name}}</div>
+
+
+    <div>{{table.settings.columns.id.display}}</div>
+
+
 
     <div class="btn-group pull-right">
         <ul class="pagination" >
