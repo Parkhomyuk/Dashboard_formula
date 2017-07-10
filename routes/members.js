@@ -3,14 +3,22 @@ var router=express.Router();
 
 
 var mysql=require('mysql');
- var pool=mysql.createPool({
+var pool=mysql.createPool({
+    connectionLimit:1000,
+    host     : 'localhost',
+    user     : 'root',
+    password : 'root',
+    database : 'formula_of_unity',
+    debug: false
+});
+/*var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
     password : 'root',
     database : 'mytaskslist',
     debug: false
-});
+});*/
 /*var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'us-cdbr-iron-east-03.cleardb.net',
@@ -54,7 +62,7 @@ router.get('/members', function(req, res) {
         if (err) {
             console.error("An error occurred: " + err);
         }
-        connection.query('select * from user LIMIT 0,100', function(err, rows) {
+        connection.query('select * from members LIMIT 0,100', function(err, rows) {
             if (err) {
                 throw err;
             } else {
@@ -66,14 +74,41 @@ router.get('/members', function(req, res) {
                     rows: rows.length,
                 }
               res.write(JSON.stringify(rows));
-
+                console.log(JSON.stringify(rows));
                 res.end();
             }
            connection.release();
         });
     });
 });
-/* GET member listing. by page number*/
+
+/*
+
+router.get('/members', function(req, res) {
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+        connection.query('select * from members LIMIT 0,100', function(err, rows) {
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+                res.write(JSON.stringify(rows));
+
+                res.end();
+            }
+            connection.release();
+        });
+    });
+});
+/!* GET member listing. by page number*!/
 router.get('/members/page:param', function(req, res) {
     console.log(req.params);
     var r=req.params.param
@@ -81,7 +116,7 @@ router.get('/members/page:param', function(req, res) {
         if (err) {
             console.error("An error occurred: " + err);
         }
-        /*connection.query('select * from user LIMIT 0,'+req.params.param, function(err, rows) {*/
+        /!*connection.query('select * from user LIMIT 0,'+req.params.param, function(err, rows) {*!/
         connection.query(r, function(err, rows) {
             if (err) {
                 throw err;
@@ -102,7 +137,7 @@ router.get('/members/page:param', function(req, res) {
     });
 });
 
-/*router.get('/members/id/:id', function(req, res) {
+/!*router.get('/members/id/:id', function(req, res) {
     console.log(req.params);
     pool.getConnection(function(err, connection) {
         if (err) {
@@ -130,7 +165,7 @@ router.get('/members/page:param', function(req, res) {
             connection.release();
         });
     });
-});*/
+});*!/
 
 
 
@@ -172,7 +207,7 @@ router.get('/members/:param', function(req, res) {
             console.error("An error occurred: " + err);
         }
         console.log([req.params.param]+" this is par "+(typeof [req.params.par]==='string'));
-       /* connection.query('select * from user ORDER BY ? DESC LIMIT 0,100', ['id'], function(err, rows) {*/
+       /!* connection.query('select * from user ORDER BY ? DESC LIMIT 0,100', ['id'], function(err, rows) {*!/
         connection.query(query,  function(err, rows) {
             if (err) {
                 throw err;
@@ -195,8 +230,8 @@ router.get('/members/:param', function(req, res) {
 router.get('/members/up/:paramup', function(req, res) {
     console.log(req.params);
     console.log([req.params.paramup]+' UP');
-    /*var r='select * from user ORDER BY '+req.params.paramup +'   LIMIT 0,100';
-    var rr='select * from user where first_name like '+"'"+'V%'+"'"+'  ORDER BY last_name DESC LIMIT 0, 100 ';*/
+    /!*var r='select * from user ORDER BY '+req.params.paramup +'   LIMIT 0,100';
+    var rr='select * from user where first_name like '+"'"+'V%'+"'"+'  ORDER BY last_name DESC LIMIT 0, 100 ';*!/
     var q=req.params.paramup;
     var query=q.replace(/xoxxooxl/g, '%\'');
 
@@ -266,11 +301,11 @@ router.post('/members/add', function(req, res) {
 router.get('/members/search/:term', function(req, res) {
 
 
-  /*  var r=req.params.term+'%\' LIMIT 0,100';*/
+  /!*  var r=req.params.term+'%\' LIMIT 0,100';*!/
     var re=req.params.term.replace(/xoxxooxl/g, '%\'');
-   /* var f=re.replace(/0/g,' ');
+   /!* var f=re.replace(/0/g,' ');
     var t=f.slice(0,-3);
-    var r="select * from user where "+t+" LIMIT 0,100";*/
+    var r="select * from user where "+t+" LIMIT 0,100";*!/
 
    console.log(re+' What');
 
@@ -282,8 +317,8 @@ router.get('/members/search/:term', function(req, res) {
         }
 
 
-        /*connection.query('select * from members where fullname=?', [req.params.term], function(err, rows) {*/
-        /*connection.query('select * from user where first_name like ?', [req.params.term+'%'], function(err, rows) {*/
+        /!*connection.query('select * from members where fullname=?', [req.params.term], function(err, rows) {*!/
+        /!*connection.query('select * from user where first_name like ?', [req.params.term+'%'], function(err, rows) {*!/
         connection.query(re, function(err, rows) {
             console.log(re+' query');
             if (err) {
@@ -331,7 +366,7 @@ router.get('/members/pages',function(req,res){
                 pageCount = Math.ceil(totalRec / pageSize);
                 console.log(totalRec+"ja ja "+pageCount);
                 console.log(JSON.stringify(rows));
-                /* if (typeof req.query.page !== 'undefined') {
+                /!* if (typeof req.query.page !== 'undefined') {
 
                  currentPage = req.query.page;
 
@@ -350,7 +385,7 @@ router.get('/members/pages',function(req,res){
                  res.render('index', { data: data, pageSize: pageSize, pageCount: pageCount,currentPage: currentPage});
                  console.log(res.render);
                  console.log(res);
-                 });*/
+                 });*!/
                 res.write(JSON.stringify(rows));
 
                 res.end();
@@ -368,7 +403,7 @@ router.delete('/members/:id', function(req, res) {
             console.error("An error occurred: " + err);
         }
         console.log(req.params.id+' ffff');
-        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){ /*connection.release();*/});
+        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){ /!*connection.release();*!/});
         connection.query('delete from user where id=?', [req.params.id], function(err, rows) {
 
             if (err) {
@@ -391,13 +426,14 @@ router.delete('/members/:id', function(req, res) {
 
             }
 
-            /*connection.release();*/
+            /!*connection.release();*!/
         });
         connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ connection.release();});
 
     });
 
 });
+*/
 
 module.exports = router;
 
