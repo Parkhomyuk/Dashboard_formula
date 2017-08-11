@@ -3,7 +3,7 @@ var router=express.Router();
 
 
 var mysql=require('mysql');
-var pool=mysql.createPool({
+ var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
@@ -74,10 +74,46 @@ router.get('/members', function(req, res) {
                     rows: rows.length,
                 }
               res.write(JSON.stringify(rows));
-                console.log(JSON.stringify(rows));
+                /*console.log(JSON.stringify(rows));*/
                 res.end();
             }
            connection.release();
+        });
+    });
+});
+
+router.get('/members/search/:term', function(req, res) {
+var re=req.params.term.replace(/xoxxooxl/g, '%\'');
+
+
+console.log(re+' What');
+
+
+
+pool.getConnection(function(err, connection) {
+    if (err) {
+        console.error("An error occurred: " + err);
+    }
+        connection.query(re, function(err, rows) {
+            console.log(re+' query');
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+                console.log(JSON.stringify(result)+' way');
+                console.log(req.params+' way');
+
+                res.write(JSON.stringify(rows));
+
+                res.end();
+            }
+            connection.release();
         });
     });
 });

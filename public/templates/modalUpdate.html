@@ -1,0 +1,25 @@
+<div id="popUpMsg-bg" ng-show="table.showUpdateModal.visible" style=" z-index:1000">
+
+
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="table.closePopup()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="smallModalHead">Update information</h4>
+            </div>
+            <div class="modal-body">
+                Are you realy want update information about: <br>
+                <h4>{{table.updateText}}</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="table.closePopup()">No</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="table.removeItem()">Yes</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</div>
