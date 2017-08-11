@@ -1,0 +1,632 @@
+<!--
+<div class="" id="table_wrapper" ng-controller="tableController as table">
+
+
+    <section id="content" class="column-right">
+
+        <div class="manager">
+            <div class="header">
+                <h3>{{first.settings.title.title}}  </h3>   <button type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle" aria-hidden="true">Export to Excel</i></button>
+            </div>
+
+            &lt;!&ndash;<table class="table table-bordered smarttable" id="tableUser">
+
+                <thead>
+                <tr>
+                    <th class="zero" style="background-color: #f8ffda; border: 1px solid #0f0f0f">Manage</th>
+                    <th class="align-right third" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.id.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('id')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('id')"></span>
+                    </th>
+                    <th class="align-right third" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.role_id.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="orderUsersUp('fullname')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByDownName('fullname')"></span>
+                    </th>
+                    <th class="align-right third" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.username.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByUpName('fullname')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByDownName('fullname')"></span>
+                    </th>
+                    <th class="align-right fourth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.password.title}}<br>
+                        <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                    </th>
+                    <th class="align-right fifth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.first_name.title}}<br>
+                        <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="orderUsers('ORDER by first_name ASC')"> </span>
+                        <span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" ng-click="orderUsers('ORDER by first_name  DESC')"></span>
+                    </th>
+
+                    <th class="align-right sixth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.last_name.title}}<br>
+                        <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="orderUsers('ORDER by last_name ASC')" ></span>
+                        <span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" ng-click="orderUsers('ORDER by last_name DESC')"></span>
+                    </th>
+                    <th class="align-right seventh" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.middle_name.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="orderUsersUp('last_name')">
+
+                </span>
+                        <span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('middle_name ASC')"></span> </th>
+                    <th class="align-right eighth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.birthday.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('birthday')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('birthday')"></span>
+                    </th>
+                    <th class="align-right ninth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.email.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('email')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('email')"></span>
+                    </th>
+                    <th class="align-right tenth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.new_email.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('new_email')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('new_email')"></span>
+                    </th>
+                    <th class="align-right eleventh" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.telephon_number.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('telephone_number')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('telephone_number')"></span>
+                    </th>
+                    <th class="align-right twelfth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{first.settings.columns.status.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByPropUp('status')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('status')"></span>
+                    </th>
+                </tr>
+
+                <tr class="smart">
+                    <th> <span class="glyphicon glyphicon-plus" aria-hidden="true" ng-click="first.upAddUpdate('add')" style="border: 1px solid black; padding: 1vh; border-radius: 50px; margin-right: 1vw"> </span>|<span class="glyphicon glyphicon-eye-open" aria-hidden="true" style="margin-left: 1vw"> </span><span class="glyphicon glyphicon-arrow-right" aria-hidden="true" > </span></th>
+                    <th><input #searchBox   class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputId"  placeholder=" id"/></th>
+                    <th><input #searchBox   class="searchin"  (keyup)="search(searchBox.value)" [(ngModel)]="inputRole" placeholder=" role"/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputUser_name"   placeholder=" "/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputPassword"   placeholder=" password"/></th>
+                    <th><input #searchBox  class="searchin" ng-keyup="search()"  ng-model="inputFirst_name"   placeholder=" first name"/></th>
+                    <th><input #searchBox  class="searchin" ng-keyup="search()"  ng-model="inputLast_name"    placeholder=" last name"/></th>
+                    <th><input #searchBox  class="searchin" ng-keyup="search()"  ng-model="inputMiddle_name"  placeholder="middle name"/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputBirthday"   placeholder=" birthday"/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputEmail"   placeholder=" e:mail"/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputNew_Email"   placeholder=" new e:mail"/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputTelephon_number"   placeholder=" tel. number"/></th>
+                    <th><input #searchBox  class="searchin" (keyup)="search(searchBox.value)" [(ngModel)]="inputStatus"   placeholder=" stat"/></th>
+
+                </tr>
+                &lt;!&ndash;<tr class="addUser" id="addU" hidden>
+                    <th class="addth">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="onAddMembers()"></span>
+                        |
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="closeAdd()"> </span>
+                    </th>
+                    <th>&lt;!&ndash;<input #inputName class="addin" [(ngModel)]="newId" placeholder=" id"/>&ndash;&gt;</th>
+                    <th><input type="number" class="addin"  [(ngModel)]="new_role_id"  placeholder=" role"/></th>
+                    <th> </th>
+                    <th><input  type="password" class="addin"  [(ngModel)]="newPassword" placeholder=" password"/></th>
+                    <th><input  type="text"  class="addin"  [(ngModel)]="new_first_name" placeholder=" first name"/></th>
+                    <th><input  type="text" class="addin"  [(ngModel)]="new_last_name" placeholder=" last name"/></th>
+                    <th><input  type="text" class="addin"  [(ngModel)]="new_middle_name" placeholder=" middle name"/></th>
+                    <th><input type="date"  class="addin"  [(ngModel)]="new_birthday" placeholder=" birthday"/></th>
+                    <th> </th>
+                    <th><input   type="email" class="addin"  [(ngModel)]="new_email" placeholder=" email"/></th>
+                    <th><input   type="text" class="addin"  [(ngModel)]="new_telephone_number" placeholder=" phone number"/></th>
+                    <th><input   class="addin"  [(ngModel)]="new_status" placeholder=" status"/></th>
+                </tr>&ndash;&gt;
+
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in  items.data">
+
+                    <td id ="{{item}}" class="zero" style="background-color: #f8ffda; border: 1px solid #0f0f0f">
+                        <div id="{{item.id+'a'}}">
+                            <span   class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"> </span>
+                            |
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeItem(item.id)"> </span>
+                        </div>
+                        &lt;!&ndash;<div id="{{item.id+'b'}}" hidden>
+                            <span   class="glyphicon glyphicon-ok" aria-hidden="true" (click)="onUpdateUsers(item)"></span>
+                            |
+                            <span  class="glyphicon glyphicon-remove" aria-hidden="true" (click)="updateFalse(item)"> </span>
+                        </div>&ndash;&gt;
+                    </td >
+
+                    <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.id}}</td>
+                    <td class="first" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.role_id}}</td>
+
+                    <td id="{{item.id+'d'}}" class="second" ngClass="nowrap" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.username}}</td>
+                    <td id="{{item.id+'e'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.password}}</td>
+
+                    <td id="{{item.id+'g'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.first_name}}</td>
+
+                    <td id="{{item.id+'g2'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.last_name}}</td>
+
+                    <td id="{{item.id+'g3'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.middle_name}}</td>
+
+                    <td id="{{item.id+'i'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.birthday| date:"dd/MM/yyyy"}}</td>
+
+                    <td id="{{item.id+'k'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.email}}</td>
+
+                    <td id="{{item.id+'k2'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.new_email}}</td>
+
+                    <td id="{{item.id+'m'}}" class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.telephone_number}}</td>
+
+                    <td id="{{item.id+'o'}}" class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.status}}</td>
+
+
+                </tr>
+                </tbody>
+            </table>
+
+
+
+
+            <div class="pagers "  >
+
+                <div class="row">
+
+                    <div class="btn-group col-md-6">
+                        <label  >Members {{count}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="col-md-6 control-label">count of rows on page<br><span>*by default 100</span></label>
+                        <div class="col-md-6">
+                            <select class="form-control select" data-style="btn-success" ng-model="numberRows" >
+
+
+                                <option ng-repeat="count in chooseCountNumber"  >{{count}}</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btn-group pull-right">
+                    <ul class="pagination" >
+                        <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
+                        <li ng-repeat="page in arrayCountPage"  >
+                            <a ng-click="setPage(page)"    href="#" >{{page}}</a>
+                        </li>
+                        <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+&ndash;&gt;
+
+            <main-table></main-table>
+            <table class="table table-bordered smarttable" id="tableUserPrint" hidden>
+
+                <thead>
+                <tr>
+
+                    <th class="align-right third" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.id.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" (click)="orderByProp('id')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" (click)="orderByProp('id')"></span>
+                    </th>
+                    <th class="align-right third" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.role_id.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                    <th class="align-right third" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.username.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                    <th class="align-right fourth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.password.title}}<br>
+                        <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                    </th>
+                    <th class="align-right fifth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.first_name.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span> </th>
+                    <th class="align-right sixth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.last_name.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span> </th>
+                    <th class="align-right seventh" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.middle_name.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span> </th>
+                    <th class="align-right eighth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.birthday.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                    <th class="align-right ninth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.email.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                    <th class="align-right tenth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.new_email.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                    <th class="align-right eleventh" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.telephon_number.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                    <th class="align-right twelfth" style="background-color: #f8ffda; border: 1px solid #0f0f0f">{{settings.columns.status.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true"  >
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true"  ></span>
+                    </th>
+                </tr>
+
+
+
+
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in  items.data">
+
+                    &lt;!&ndash;<td   class="zero" style="background-color: #f8ffda; border: 1px solid #0f0f0f">
+                        <div >
+                            <span   class="glyphicon glyphicon-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item.id)"> </span>
+                            |
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeItem(item.id)"> </span>
+                        </div>
+                        &lt;!&ndash;<div id="{{item.id+'b'}}" hidden>
+                            <span   class="glyphicon glyphicon-ok" aria-hidden="true" (click)="onUpdateUsers(item)"></span>
+                            |
+                            <span  class="glyphicon glyphicon-remove" aria-hidden="true" (click)="updateFalse(item)"> </span>
+                        </div>&ndash;&gt;
+                    </td >&ndash;&gt;
+
+                    <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.id}}</td>
+                    <td class="first" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.role_id}}</td>
+
+                    <td  class="second" ngClass="nowrap" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.username}}</td>
+                    <td  class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.password}}</td>
+
+                    <td  class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.first_name}}</td>
+
+                    <td  class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.last_name}}</td>
+
+                    <td  class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.middle_name}}</td>
+
+                    <td  class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.birthday| date:"dd/MM/yyyy"}}</td>
+
+                    <td  class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.email}}</td>
+
+                    <td  class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.new_email}}</td>
+
+                    <td  class="align-right third" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f">{{item.telephone_number}}</td>
+
+                    <td  class="align-right third" style="background-color: #dbe2bd; border: 1px solid #0f0f0f">{{item.status}}</td>
+
+
+                </tr>
+                </tbody>
+            </table>
+
+    </section>
+
+</div>
+
+
+
+
+
+&lt;!&ndash;===============================================================End Main table======================================================&ndash;&gt;
+&lt;!&ndash;===============================================================Start add and update ======================================================&ndash;&gt;
+<div class="page-content   fill " ng-show="first.addUser.visible" ng-controller="sideBarCtrl">
+    <div class="addMembers">
+        <div class="row">
+            <div class="col-md-12" style="background-color: white">
+                <li class="xn-icon-button close" ng-click="first.closeAddUpdate('add')">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true" ></span>
+                </li>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Add new member</strong></h3>
+
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p>This is page for add new member. Please fill all fields. Fields marked * fill are mandatory.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Role</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></span>
+                                    <input type="text" class="form-control" placeholder=" role id" ng-model="new_role_id" />
+                                </div>
+                                <span class="help-block">Enter role id</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">First name</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></span>
+                                    <input type="text" class="form-control" placeholder=" member's first name" ng-model="new_first_name" />
+                                </div>
+                                <span class="help-block">Enter first name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Last name</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="text" class="form-control"  ng-model="new_last_name" />
+                                </div>
+                                <span class="help-block">Enter last name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Middle name</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="text" class="form-control"  ng-model="new_middle_name" />
+                                </div>
+                                <span class="help-block">Middle   name</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
+                                    <input type="password" class="form-control"  ng-model="new_password" />
+                                </div>
+                                <span class="help-block">Password field sample</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type of member</label>
+                            <div class="col-md-9">
+                                <select class="form-control select" ng-model="new_type" >
+                                    <option>User</option>
+                                    <option>Employee</option>
+                                    <option>Admin</option>
+
+                                </select>
+                                <span class="help-block">Select role type</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Birthday</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                    <input type="date" class="form-control datepicker" value="2017-05-01"  ng-model="new_birthday" >
+                                </div>
+                                <span class="help-block">Click on input field to get date</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="email" class="form-control"  ng-model="new_email" />
+                                </div>
+                                <span class="help-block">Email</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Phone number</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="tel" class="form-control"  ng-model="new_telephon_number" />
+                                </div>
+                                <span class="help-block">Phone number</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status</label>
+                            <div class="col-md-9">
+                                <select class="form-control select" ng-model="new_status" >
+                                    <option>0</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                    <option>Option 4</option>
+                                    <option>Option 5</option>
+                                </select>
+                                <span class="help-block">Select status</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default">Clear Form</button>
+                    <button class="button" ng-click="addItems()">Submit add</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-content   fill " ng-show="first.updateUser.visible" ng-controller="firstCtrl as first">
+    <div class="addMembers update">
+
+        <div class="row">
+            <div class="col-md-12" style="background-color: white">
+                <li class="xn-icon-button close" ng-click="first.closeAddUpdate('update')">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </li>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Update member</strong></h3>
+
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p>This is page for update new member. </p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Role</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></span>
+                                    <input type="text" class="form-control" placeholder=" role id" ng-model="first.clone.role_id" />
+                                </div>
+                                <span class="help-block">Enter role id</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">First name</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></span>
+                                    <input type="text" class="form-control" placeholder=" first name"  ng-model="first.clone.first_name"  >
+                                </div>
+                                <span class="help-block">Enter first name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Last name</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="text" class="form-control" ng-model="first.clone.last_name" />
+                                </div>
+                                <span class="help-block">Enter last name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Middle name</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="text" class="form-control" ng-model="first.clone.middle_name" />
+                                </div>
+                                <span class="help-block">Middle   name</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9 col-xs-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
+                                    <input type="password" class="form-control" ng-model="first.clone.password" />
+                                </div>
+                                <span class="help-block">Password field sample</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Type of member</label>
+                            <div class="col-md-9">
+                                <select class="form-control select" value="" >
+                                    <option>User</option>
+                                    <option>Employee</option>
+                                    <option>Admin</option>
+
+                                </select>
+                                <span class="help-block">Select role type</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Birthday</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                    <input type="date" class="form-control datepicker"   ng-model="first.clone.birthday" >
+                                </div>
+                                <span class="help-block">Click on input field to get date</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Email</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="email" class="form-control" ng-model="first.clone.new_email" />
+                                </div>
+                                <span class="help-block">Email</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Phone number</label>
+                            <div class="col-md-9">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                    <input type="tel" class="form-control" ng-model="first.clone.telephone_number" />
+                                </div>
+                                <span class="help-block">Phone number</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Status</label>
+                            <div class="col-md-9">
+                                <input  class="form-control" ng-model="first.clone.status"/>Current status
+                                <select class="form-control select" ng-model="first.clone.status" >
+                                    <option ng-repeat="x in first.status_select">{{x}}</option>
+                                </select>
+
+                                <span class="help-block">Select status</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default" ng-click="first.clearForm()">Clear Form</button>
+                    <button cclass="button" ng-click="updateItem()">Submit</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+&lt;!&ndash;===============================================================End add and update ======================================================&ndash;&gt;
+
+-->
+
+<div class="members" >
+<main-table></main-table>
+</div>

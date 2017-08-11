@@ -1,0 +1,138 @@
+<div ng-controller="tableController as table">
+    <div class="header row">
+
+        <div class="check col-md-2">
+
+            <div class="btn-group">
+                <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Columns<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="item in table.settings.columns">
+                        <div class="{{table.settings.count.number}}" >
+                        <div class="input-group row">
+                        <span class="input-group-addon">
+                             <input type="checkbox" aria-label="..." ng-model="item.display" >
+                          </span>
+
+                            <div>{{item.title}}</div>
+                        </div>
+                    </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle"   aria-hidden="true"> Export to Excel</i></button>
+        </div>
+        <div class="col-md-10"></div>
+    </div>
+        <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8"><h3>{{table.settings.title.title}}  </h3></div>
+        <!--<div class="col-md-3"><button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle" aria-hidden="true">Export to Excel</i></button></div>-->
+        </div>
+
+
+
+
+<table class="table table-bordered smarttable" id="tableUser" style="width: 98%" >
+
+    <thead>
+    <tr>
+        <th class="align-right zero" style="border: 1px solid black " >Manage</th>
+        <th class="align-right" style="border: 1px solid black " ng-repeat="column in table.settings.columns | sortBy | orderBy:'order'" ng-if="column.display">{{column.title}}<br>
+                <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="table.orderByProp( column.db_name+' ASC')">
+
+                </span><span  class="glyphicon glyphicon-chevron-down" aria-hidden="true" ng-click="table.orderByProp( column.db_name+' DESC')"></span>
+        </th>
+    </tr>
+
+    <tr class="smart">
+        <th class="search" style="width: 10%"> <i class="fa fa-plus-circle" aria-hidden="true" ng-click="table.addUpMembers('add')" style="padding-right: 1vw"></i>|<i class="fa fa-search" aria-hidden="true" style="padding-left: 1vw"></i> </th>
+        <th class="search" ng-repeat="sear in table.settings.columns | sortBy | orderBy:'order'" ng-if="sear.display" style="{{sear.width}}">
+            <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" ng-if="sear.search"/></th>
+    </tr>
+
+
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in  table.items">
+
+        <td id ="{{item}}" class="zero" style="background-color: #f8ffda; border: 1px solid #0f0f0f">
+            <div id="{{item.id+'a'}}">
+                <i class="fa fa-eye" aria-hidden="true" ng-click="table.addUpMembers(item)"  ></i>
+                |
+                <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i>
+                |
+               <!-- <i class="fa fa-trash-o" aria-hidden="true" ng-click="table.removeItem(item.id)" data-toggle="modal" ></i>-->
+                <i class="fa fa-trash-o" aria-hidden="true" ng-click="table.openPopUp(item)" data-toggle="modal" ></i>
+
+
+            </div>
+
+        </td >
+
+        <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f" ng-repeat="value in table.sortProperties "   >
+            <p ng-if="value!='birthday'">{{item[value]}}</p>
+            <p ng-if="value=='birthday'">{{item[value] | date:"dd/MM/yyyy"}}
+
+            </p></td>
+
+
+
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+<div class="pagers "  >
+
+    <div class="row">
+
+            <div class="btn-group col-md-6">
+                <label  >Members {{count}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label class="col-md-6 control-label">count of rows on page<br><span>*by default 100</span></label>
+                <div class="col-md-6">
+                    <select class="form-control select" data-style="btn-success" ng-model="numberRows" >
+
+
+                        <option ng-repeat="count in chooseCountNumber"  >{{count}}</option>
+
+                    </select>
+                </div>
+            </div>
+
+
+    </div>
+
+
+    <div class="btn-group pull-right">
+        <ul class="pagination" >
+            <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
+            <li ng-repeat="page in arrayCountPage"  >
+                <a ng-click="setPage(page)"    href="#" >{{page}}</a>
+            </li>
+            <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+</div>
+
+    <modal></modal>
+    <viewmember></viewmember>
+
+
+</div>
+
+
+</div>
