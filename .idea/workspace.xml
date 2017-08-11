@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ab67687-987d-476b-b7f4-1d371f100fb2" name="Default" comment="" />
+    <list default="true" id="8ab67687-987d-476b-b7f4-1d371f100fb2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/members.js" afterPath="$PROJECT_DIR$/routes/members.js" />
+    </list>
     <ignored path="Dashboard_formula.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,16 +103,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/controllers/table.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="245" column="71" selection-start-line="245" selection-start-column="71" selection-end-line="245" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="table2.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/controllers/table2.controller.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -140,14 +133,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modalUpdate.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modalUpdate.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/modalUpdate.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6467391">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="members.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/members.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38235295">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,7 +212,6 @@
         <option value="$PROJECT_DIR$/public/templates/main.html" />
         <option value="$PROJECT_DIR$/public/js/controllers/dashboardCtrl.js" />
         <option value="$PROJECT_DIR$/public/templates/table.html" />
-        <option value="$PROJECT_DIR$/routes/members.js" />
         <option value="$PROJECT_DIR$/public/templates/blue.html" />
         <option value="$PROJECT_DIR$/public/css/theme-blue.css" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
@@ -218,6 +220,7 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/controllers/table2.controller.js" />
         <option value="$PROJECT_DIR$/public/templates/modalUpdate.html" />
+        <option value="$PROJECT_DIR$/routes/members.js" />
       </list>
     </option>
   </component>
@@ -879,13 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/members.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="49" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1013,11 +1009,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/modalUpdate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6467391">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/members.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38235295">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

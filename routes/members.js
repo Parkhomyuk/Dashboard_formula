@@ -3,15 +3,35 @@ var router=express.Router();
 
 
 var mysql=require('mysql');
- var pool=mysql.createPool({
+heroku_81100d486555e91
+var pool=mysql.createPool({
+    connectionLimit:1000,
+    host     : 'us-cdbr-iron-east-05.cleardb.net',
+    user     : 'b5165b49633754',
+    password : 'd6d209b8',
+    database : 'heroku_81100d486555e91',
+    debug: false
+});
+
+/* var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
     password : 'root',
     database : 'formula_of_unity',
     debug: false
-});
-/*var pool=mysql.createPool({
+});*/
+/*
+ heroku_81100d486555e91
+ var pool=mysql.createPool({
+ connectionLimit:1000,
+ host     : 'us-cdbr-iron-east-05.cleardb.net',
+ user     : 'b5165b49633754',
+ password : 'd6d209b8',
+ database : 'heroku_81100d486555e91',
+ debug: false
+ });
+var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
