@@ -3,16 +3,16 @@ var router=express.Router();
 
 
 var mysql=require('mysql');
- var pool=mysql.createPool({
+ /*var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
     password : 'root',
     database : 'formula_of_unity',
     debug: false
-});
-/*
- heroku_81100d486555e91
+});*/
+
+ /*heroku_81100d486555e91 */
  var pool=mysql.createPool({
  connectionLimit:1000,
  host     : 'us-cdbr-iron-east-05.cleardb.net',
@@ -28,7 +28,7 @@ var pool=mysql.createPool({
     password : 'root',
     database : 'mytaskslist',
     debug: false
-});*/
+});
 /*var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'us-cdbr-iron-east-03.cleardb.net',
