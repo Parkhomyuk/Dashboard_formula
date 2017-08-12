@@ -1,4 +1,4 @@
-<div ng-controller="tableController as table">
+<div ng-controller="table2Controller as table">
     <div class="header row">
 
         <div class="check col-md-2">
@@ -10,7 +10,7 @@
                         <div class="{{table.settings.count.number}}" >
                         <div class="input-group row">
                         <span class="input-group-addon">
-                             <input type="checkbox" aria-label="..." ng-model="item.display" >
+                             <input type="checkbox" aria-label="..." ng-model="item.display"  >
                           </span>
 
                             <div>{{item.title}}</div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-2">
-            <button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle"   aria-hidden="true"> Export to Excel</i></button>
+            <button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><!--<i class="fa fa-exclamation-circle"   aria-hidden="true"> -->Export to Excel</i></button>
         </div>
         <div class="col-md-10"></div>
     </div>
@@ -48,7 +48,7 @@
     </tr>
 
     <tr class="smart">
-        <th class="search" style="width: 10%"> <i class="fa fa-plus-circle" aria-hidden="true" ng-click="table.addUpMembers('add')" style="padding-right: 1vw"></i>|<i class="fa fa-search" aria-hidden="true" style="padding-left: 1vw"></i> </th>
+        <th class="search" style="width: 10%"> <i class="fa fa-plus-circle" aria-hidden="true" ng-click="table.addUpMembers('add')" style="padding-right: 1vw"></i>|<i class="fa fa-search" aria-hidden="true" style="padding-left: 0.3vw"></i> </th>
         <th class="search" ng-repeat="sear in table.settings.columns | sortBy | orderBy:'order'" ng-if="sear.display" style="{{sear.width}}">
             <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" ng-if="sear.search"/></th>
     </tr>
@@ -63,7 +63,7 @@
                 <i class="fa fa-eye" aria-hidden="true" ng-click="table.addUpMembers(item)"  ></i>
                 |
                 <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i>
-                |
+
                <!-- <i class="fa fa-trash-o" aria-hidden="true" ng-click="table.removeItem(item.id)" data-toggle="modal" ></i>-->
                 <i class="fa fa-trash-o" aria-hidden="true" ng-click="table.openPopUp(item)" data-toggle="modal" ></i>
 
@@ -72,11 +72,11 @@
 
         </td >
 
-        <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 1px solid #0f0f0f" ng-repeat="value in table.sortProperties "   >
-            <p ng-if="value!='birthday'">{{item[value]}}</p>
-            <p ng-if="value=='birthday'">{{item[value] | date:"dd/MM/yyyy"}}
+        <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 0.5px solid #0f0f0f" ng-repeat="value in table.sortProperties "   >
 
-            </p></td>
+            <p ng-if="value[2]!='Date'">{{item[value[0]]}}</p>
+            <p ng-if="value[2]=='Date'">{{item[value[0]] | date:"dd/MM/yyyy"}}   </p>
+        </td>
 
 
 

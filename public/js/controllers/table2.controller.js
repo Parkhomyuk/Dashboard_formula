@@ -569,11 +569,19 @@ console.log(item.surname+' '+item.name)
             vn.refresh();
 
         });
+        $scope.$watch(angular.bind(this, function () {
+          /*  return this.settings.columns.id.display;*/
+            return this.settings.columns ;
+        }), function (newVal, oldVal) {
+            console.log(vn.settings.columns+' ffuc');
+            vn.refresh();
+
+        },true);
 
         vn.search= function(){
 
-            vn.sortProperties=sortProp(vn.settings.columns);
-           /* console.log('sortable '+ vn.sortProperties);*/
+            vn.sortProperties=sortProp(vn.settings.columns  );
+           console.log('sortable '+ vn.sortProperties);
 
             vn.arrayProp=[];
             vn.lag = vn.pageNumber * vn.numberRows;
@@ -588,7 +596,7 @@ console.log(item.surname+' '+item.name)
                 if (vn.settings.columns.hasOwnProperty(key)) {
                     console.log( );
                     if (vn.settings.columns[key].mod_name != '') {
-                        console.log( );
+                        console.log();
                         if (vn.settings.columns[key].length != 0) {
 
                             stringQuery += +" " + key + " like " + "'" + vn.settings.columns[key].mod_name + "xoxxooxl and ";
@@ -623,7 +631,7 @@ console.log(item.surname+' '+item.name)
 
             $http.get('/api/members/search/' + query).then(function (data) {
                 vn.items = data.data;
-
+                console.log(  vn.items)
             })
 
             /* console.log(stringQuery);
@@ -636,8 +644,14 @@ console.log(item.surname+' '+item.name)
 
         function sortProp(obj){
             var arr=[];
-            for(var i in obj){
-                arr.push([i,obj[i].order,obj[i].type]);
+            for(var i in obj) {
+                if (obj[i].display == true) {
+                    console.log(obj[i].display + ' true');
+
+
+                    arr.push([i, obj[i].order, obj[i].type]);
+
+                }
             }
             arr.sort(function(a,b){
                 return a[1]-b[1];

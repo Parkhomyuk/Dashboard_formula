@@ -17,7 +17,7 @@ app.use('/', index);
 app.use('/api', tasks);
 app.use('/api', members);
 app.use('/api', uploadfile);
-/*app.set('port', (process.env.PORT || 5000));*/
+app.set('port', (process.env.PORT || 5000));
 /*app.set('port', (process.env.PORT || 8000));*/
 
 
@@ -25,16 +25,18 @@ app.get('/api', function (req, res) {
    res.sendFile(path.join(__dirname+'/public/','index.html'));
 
 });
+/*
 var port = process.env.PORT || 8000
 app.listen(port, function() {
     console.log("App is running on port " + port);
 });
+*/
 
 
 
-/*app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
-});*/
+});
 module.exports = app;
 /*
 
