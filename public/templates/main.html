@@ -8,6 +8,12 @@
 
            <!-- START WIDGET SLIDER-->
            <div class="widget widget-default widget-carousel">
+               <div class="widget-data">
+                   <div class="widget-int num-count">urgently</div>
+                   <div class="widget-title">letters</div>
+                   <div class="widget-title">Messages</div>
+                   <div class="widget-subtitle">Go over</div>
+               </div>
                <div class="owl-carousel" id="owl-example">
                    <div>
                        <div class="widget-title">Total Visitors</div>
@@ -37,7 +43,7 @@
           <!--  START WIDGET MESSAGES-->
            <div class="widget widget-default widget-item-icon" onclick="location.href='pages-messages.html';">
                <div class="widget-item-left">
-                   <span class="fa fa-envelope"></span>
+                   <!--<span class="fa fa-envelope" style="margin-left: 0"></span>-->
                </div>
                <div class="widget-data">
                    <div class="widget-int num-count">48</div>
@@ -56,12 +62,12 @@
           <!--  START WIDGET REGISTRED-->
            <div class="widget widget-default widget-item-icon" onclick="location.href='pages-address-book.html';">
                <div class="widget-item-left">
-                   <span class="fa fa-user"></span>
+                 <!--  <span class="fa fa-user"></span>-->
                </div>
                <div class="widget-data">
-                   <div class="widget-int num-count">375</div>
-                   <div class="widget-title">Registred users</div>
-                   <div class="widget-subtitle">On your website</div>
+                   <div class="widget-int num-count">11250</div>
+                   <div class="widget-title">Registred members</div>
+                   <div class="widget-subtitle">in our system</div>
                </div>
                <div class="widget-controls">
                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top" title="Remove Widget"><span class="fa fa-times"></span></a>
@@ -132,8 +138,8 @@
            <div class="panel panel-default">
                <div class="panel-heading">
                    <div class="panel-title-box">
-                       <h3>Visitors</h3>
-                       <span>Visitors (last month)</span>
+                       <h3>Members</h3>
+                       <span>Members (last month)</span>
                    </div>
                    <ul class="panel-controls" style="margin-top: 2px;">
                        <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
@@ -157,16 +163,116 @@
 
        <div class="col-md-4">
 
-
+           <!--  START TD list BLOCK-->
+           <div class="panel panel-default">
+               <div class="panel-heading">
+                   <div class="panel-title-box">
+                       <h3>ToDo list</h3>
+                       <span>my tasck</span>
+                   </div>
+                   <ul class="panel-controls" style="margin-top: 2px;">
+                       <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                       <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                           <ul class="dropdown-menu">
+                               <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                               <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                           </ul>
+                       </li>
+                   </ul>
+               </div>
+               <div class="panel-body padding-0">
+                   <div class="chart-holder" id="dashboard-donut-2" style="height: 200px;"></div>
+               </div>
+           </div>
+           <!--    END VISITORS BLOCK-->
 
        </div>
    </div>
-
+<row>
+    <div class="col-md-6">
+        <!--  START VISITORS BLOCK-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title-box">
+                    <h3>Mail</h3>
+                    <span>my Mail</span>
+                </div>
+                <ul class="panel-controls" style="margin-top: 2px;">
+                    <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                    <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                            <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body padding-0">
+                <div class="chart-holder" id="dashboard-donut-4" style="height: 200px;"></div>
+            </div>
+        </div>
+        <!--    END VISITORS BLOCK-->
+    </div>
+    <div class="col-md-6">
+        <!--  START VISITORS BLOCK-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title-box">
+                    <h3>Messenger</h3>
+                    <span>my Messenger</span>
+                </div>
+                <ul class="panel-controls" style="margin-top: 2px;">
+                    <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                    <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                            <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body padding-0">
+                <div class="chart-holder" id="dashboard-donut-5" style="height: 200px;"></div>
+            </div>
+        </div>
+        <!--    END VISITORS BLOCK-->
+    </div>
+</row>
 
 
   <!--  START DASHBOARD CHART-->
    <div class="chart-holder" id="dashboard-area-1" style="height: 200px;"></div>
    <div class="block-full-width">
+
+       <div class="panel panel-default">
+           <div class="panel-heading">
+               <div class="panel-title-box">
+                   <h3>Chart</h3>
+                   <span>Chart Members (last month)</span>
+               </div>
+               <ul class="panel-controls" style="margin-top: 2px;">
+                   <li><a href="#" class="panel-fullscreen"><span class="fa fa-expand"></span></a></li>
+                   <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                   <li class="dropdown">
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cog"></span></a>
+                       <ul class="dropdown-menu">
+                           <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span> Collapse</a></li>
+                           <li><a href="#" class="panel-remove"><span class="fa fa-times"></span> Remove</a></li>
+                       </ul>
+                   </li>
+               </ul>
+           </div>
+           <div class="panel-body padding-0">
+               <div class="chart-holder" id="dashboard-donut-3" style="height: 200px;"></div>
+           </div>
+       </div>
+
 
    </div>
    <!-- END DASHBOARD CHART-->
