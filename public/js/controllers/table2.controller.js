@@ -538,7 +538,7 @@
             name:'',
             middle_name:'',
             birthday:0,
-            full_years:'',
+            full_years:0,
             phone_number:'',
             parent_surname:'',
             parent_name:'',
@@ -885,21 +885,21 @@
             console.log('Tvou mat');
             vn.showPopUpWarning={visible:true};
 
-                if(vn.newMember.surname&&vn.newMember.name&&vn.newMember.parent_surname&&vn.newMember.parent_name&&vn.newMember.full_years==''){
+               /* if(vn.newMember.surname&&vn.newMember.name&&vn.newMember.parent_surname&&vn.newMember.parent_name&&vn.newMember.full_years==''){
                     vn.showPopUpWarning={visible:true};
                  console.log('wrning');
                     console.log('Tvou zad');
 
-                }
+                }*/
 
 
-            if(vn.newMember['surname']&&vn.newMember['name']&&vn.newMember['parent_surname']&&vn.newMember['parent_name']&&vn.newMember['full_years']!='') {
+            /*if(vn.newMember['surname']&&vn.newMember['name']&&vn.newMember['parent_surname']&&vn.newMember['parent_name']&&vn.newMember['full_years']!='') {*/
                 $http.post('/api/members/add', vn.newMember).then(function (item) {
                     vn.items.push(item);
                     console.log(item);
                     vn.addMemberForm = {visible: false};
                 });
-            }
+            /*}*/
         }
         vn.closeWarning=function(){
             vn.showPopUpWarning={visible:false};
