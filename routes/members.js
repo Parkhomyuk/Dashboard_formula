@@ -11,14 +11,15 @@ var mysql=require('mysql');
     database : 'formula_unity',
     debug: false
 });*/
-  /*var pool=mysql.createPool({
+   var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
     password : 'root',
     database : 'formula_of_unity',
     debug: false
-});*/
+});
+/*
 var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'us-cdbr-iron-east-05.cleardb.net',
@@ -27,6 +28,7 @@ var pool=mysql.createPool({
     database : 'heroku_81100d486555e91',
     debug: false
 });
+*/
 
  /*heroku_81100d486555e91 */
  /*var pool=mysql.createPool({
@@ -100,7 +102,7 @@ router.get('/members', function(req, res) {
                     rows: rows.length,
                 }
               res.write(JSON.stringify(rows));
-                console.log(JSON.stringify(rows));
+               /* console.log(JSON.stringify(rows));*/
                 res.end();
             }
            connection.release();
@@ -112,7 +114,7 @@ router.get('/members/search/:term', function(req, res) {
 var re=req.params.term.replace(/xoxxooxl/g, '%\'');
 
 
-console.log(re+' What');
+/*console.log(re+' What');*/
 
 
 
@@ -121,7 +123,7 @@ pool.getConnection(function(err, connection) {
         console.error("An error occurred: " + err);
     }
         connection.query(re, function(err, rows) {
-            console.log(re+' query');
+           /* console.log(re+' query');*/
             if (err) {
                 throw err;
             } else {
@@ -132,8 +134,8 @@ pool.getConnection(function(err, connection) {
                     success: true,
                     rows: rows.length,
                 }
-                console.log(JSON.stringify(result)+' way');
-                console.log(req.params+' way');
+               /* console.log(JSON.stringify(result)+' way');
+                console.log(req.params+' way');*/
 
                 res.write(JSON.stringify(rows));
 
@@ -142,6 +144,137 @@ pool.getConnection(function(err, connection) {
             connection.release();
         });
     });
+});
+router.get('/members/count', function(req, res) {
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+        connection.query('SELECT COUNT(*) FROM members ', function(err, rows) {
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+               /* console.log(rows[0]);*/
+                res.write(JSON.stringify(rows));
+
+                res.end();
+            }
+            connection.release();
+        });
+    });
+});
+router.post('/members/add', function(req, res) {
+
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+console.log(req.body);
+       connection.query('insert into members set ?', req.body,
+            function(err, rows) {
+                if (err) {
+                    throw err;
+                } else {
+                    res.writeHead(200, {
+                        "Content-Type": "application/json"
+                    });
+                    var result = {
+                        success: true,
+                        detail: rows,
+
+                        id: rows.insertId
+
+                    }
+
+                    res.write(JSON.stringify(result));
+                    res.end();
+                }
+
+
+                connection.release();
+            });
+
+    });
+
+});
+router.delete('/members/:id', function(req, res) {
+    console.log(req.params.id+'this is Params id');
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+        console.log(req.params.id+' ffff');
+        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){  });
+        connection.query('delete from members where id=?', [req.params.id], function(err, rows) {
+
+            if (err) {
+                throw err;
+            } else {
+
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                    detail: rows
+
+                }
+                console.log(req.params.id+' del');
+                console.log('delete from members where id=?', [req.params.id]+' del');
+                res.write(JSON.stringify(result));
+                res.end();
+
+            }
+
+
+        });
+        connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ connection.release();});
+
+    });
+
+});
+router.put('/members/:id', function(req, res) {
+    /*  req.assert('lastName', 'Last Name is required').notEmpty();*/
+    console.log( req.body +' params');
+    console.log( req.params.id +' params');
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+
+        connection.query('update members set ? where id = ?', [req.body, req.params.id],
+            function(err, rows) {
+                console.log('update members set ? where id = ?', [req.body, req.params.id]);
+
+                if (err) {
+                    throw err;
+                } else {
+                    res.writeHead(200, {
+                        "Content-Type": "application/json"
+                    });
+                    var result = {
+                        success: true,
+                        detail: rows
+
+                    }
+                    console.log(JSON.stringify(result));
+                    res.write(JSON.stringify(result));
+                    res.end();
+                }
+
+                connection.release();
+            });
+
+    });
+
 });
 
 /*

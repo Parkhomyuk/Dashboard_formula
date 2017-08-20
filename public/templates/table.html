@@ -48,7 +48,7 @@
     </tr>
 
     <tr class="smart">
-        <th class="search" style="width: 10%"> <i class="fa fa-plus-circle" aria-hidden="true" ng-click="table.addUpMembers('add')" style="padding-right: 1vw"></i>|<i class="fa fa-search" aria-hidden="true" style="padding-left: 0.3vw"></i> </th>
+        <th class="search" style="width: 10%"> <i class="fa fa-plus-circle" aria-hidden="true" ng-click="table.addMembers('add')" style="padding-right: 1vw"></i>|<i class="fa fa-search" aria-hidden="true" style="padding-left: 0.3vw"></i> </th>
         <th class="search" ng-repeat="sear in table.settings.columns | sortBy | orderBy:'order'" ng-if="sear.display" style="{{sear.width}}">
             <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" ng-if="sear.search"/></th>
     </tr>
@@ -129,7 +129,9 @@
 </div>
 
     <modal></modal>
+
     <viewmember></viewmember>
+    <addmember></addmember>
 
 
 </div>

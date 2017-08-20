@@ -8,12 +8,12 @@
                 <h4 class="modal-title" id="smallModalHead">Update information</h4>
             </div>
             <div class="modal-body">
-                Are you realy want update information about: <br>
+                Are you realy want update information {{table.updateModalInf}} about: <br>
                 <h4>{{table.updateText}}</h4>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="table.closePopup()">No</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="table.removeItem()">Yes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="table.closePopupUpdateModal()">No</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="table.saveUpdateModal()">Yes</button>
             </div>
         </div>
     </div>

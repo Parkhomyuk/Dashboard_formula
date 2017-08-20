@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- EOF CSS INCLUDE -->
 
+        <link href="  https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
+        <link href="  https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css">
 
     </head>
     <body>
@@ -52,7 +54,8 @@
 
                             <li><a href="#!main_table"><span class="fa fa-image"></span> Main table</a></li>
                             <li><a href="#!green"><span class="fa fa-user"></span> Profile</a></li>
-                            <li><a href="#"><span class="fa fa-users"></span> Members manage</a></li>
+                            <li><a href="#!calendar"><span class="fa fa-user"></span> Calendar</a></li>
+                            <li><a href="#!address_book"><span class="fa fa-users"></span> Members manage</a></li>
 
                     
                              </ul>
@@ -171,11 +174,28 @@
         
     <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
-        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></link>
         <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+       <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>-->
         <!-- END PLUGINS -->
+        <!-- START THIS PAGE PLUGINS-->
+        <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+        <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
 
+        <script type="text/javascript" src="js/plugins/morris/raphael-min.js"></script>
+        <script type="text/javascript" src="js/plugins/morris/morris.min.js"></script>
+        <script type="text/javascript" src="js/plugins/rickshaw/d3.v3.js"></script>
+        <script type="text/javascript" src="js/plugins/rickshaw/rickshaw.min.js"></script>
+        <script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+        <script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
+        <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+        <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>
+
+        <script type="text/javascript" src="js/plugins/moment.min.js"></script>
+        <script type="text/javascript" src="js/plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- END THIS PAGE PLUGINS-->
 
         <!-- START ANGULARJS -->
         <script type="text/javascript" src="libs/angular/angular.min.js"></script>
@@ -184,16 +204,21 @@
         <script type="text/javascript" src="js/controllers/main.controller.js"></script>
         <script type="text/javascript" src="js/controllers/table.controller.js"></script>
         <script type="text/javascript" src="js/controllers/table2.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/address.controller.js"></script>
         <script type="text/javascript" src="js/controllers/dashboardCtrl.js"></script>
         <script type="text/javascript" src="js/directives/main-table.js"></script>
         <script type="text/javascript" src="js/directives/modal.js"></script>
+        <script type="text/javascript" src="js/directives/modal_warning.js"></script>
         <script type="text/javascript" src="js/directives/modal_update.js"></script>
         <script type="text/javascript" src="js/directives/viewMember.js"></script>
+        <script type="text/javascript" src="js/directives/addMember.js"></script>
         <script type="text/javascript" src="js/filters/sort.filter.js"></script>
         <script type="text/javascript" src="js/services/express.service.js"></script>
+        <script type="text/javascript" src="lib/moment.min.js"></script>
+        <script type="text/javascript" src="js/calendar.js"></script>
 
         <!-- END ANGULARJS -->
-
+        <script src=" https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <!-- END SCRIPTS -->         
     </body>
 </html>

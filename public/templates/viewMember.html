@@ -20,10 +20,10 @@
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon " style="width: 10%" >Information:</span>
-                                            <span class="input-group-addon  " id="pen" ng-click="table.upAddUpdate(table.viewItem)" ng-hide="table.data.visible" >   <i class="fa fa-pencil" aria-hidden="true" ></i></span>
-                                            <span class="input-group-addon  " id="update" ng-click="table.saveUpdate(table.viewItem)"  ng-show="table.data.visible" >   <i class="fa fa-floppy-o"  aria-hidden="true"></i></span>
+                                            <span class="input-group-addon  " id="add_infpen" ng-click="table.upAddUpdate(table.viewItem,'add_inf')" ng-hide="table.data.visible" >   <i class="fa fa-pencil" aria-hidden="true" ></i></span>
+                                            <span class="input-group-addon  " id="add_infupdate" ng-click="table.saveUpdate(table.viewItem,'add_inf')"  ng-show="table.data.visible" >   <i class="fa fa-floppy-o"  aria-hidden="true"></i></span>
 
-                                            <textarea   id='inf' class="form-control  " readonly rows="7" style="font-size: 2rem; background-color: grey">{{table.viewItem.add_inf}}</textarea>
+                                            <textarea   id='add_inf' class="form-control  " readonly rows="7" style="font-size: 2rem; background-color: grey" ng-model="table.updateMember.add_inf">{{table.viewItem.add_inf}}</textarea>
                                         </div>
                                         <span ng-if="[table.viewItem.add_inf]==''" class=" warn">Warning field is empty</span>
                                     </div>
@@ -209,7 +209,8 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon">Birthday</span>
-                                            <input type="text" class="form-control" value="{{table.viewItem.birthday| date:'dd/MM/yyyy'}}"/>
+
+                                            <input type="date" class="form-control"  value="{{table.viewItem.birthday| date:'dd/MM/yyyy'}}"/>
                                         </div>
                                         <span class="help-block">warnings</span>
                                     </div>

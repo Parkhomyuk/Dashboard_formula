@@ -14,6 +14,12 @@ app.config(function($routeProvider) {
         })
         .when("/blue", {
             templateUrl : "templates/blue.html"
+        })
+        .when("/calendar", {
+        templateUrl : "templates/calendar.html"
+        })
+        .when("/address_book", {
+        templateUrl : "templates/address_book.html"
         });
 });
 

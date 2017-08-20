@@ -416,3 +416,6 @@ view and update member*/
   font-size: 2rem;
   background-color: grey;
 }
+.xn-icon-button,.xn-search{
+  z-index: 0;
+}

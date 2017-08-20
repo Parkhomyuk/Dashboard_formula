@@ -3,7 +3,7 @@
     function table2Controller(Transactions,$http,$scope){
         var vn=this;
         vn.settings = {
-            title:{title:"Members new Table"},
+            title:{title:"Members Table"},
             count:{number:"col-md-1"},
             columns: {
                 id: {
@@ -512,6 +512,48 @@
                 },
             }
         };
+        //Add members
+        vn.newMember={
+            add_inf:'',
+            profile:'',
+            pref_profile:'',
+            pref_profile2:'',
+            them_profile:'',
+            experience:'',
+            results:'',
+            teacher_recomend:'',
+            past_participation:'',
+            RF_subject:1,
+            city:'',
+            street:'',
+            building:'',
+            corpus:'',
+            appart:'',
+            postcode:'',
+            school:2,
+            class:'',
+            hobby:'',
+            activity:'',
+            surname:'',
+            name:'',
+            middle_name:'',
+            birthday:0,
+            full_years:'',
+            phone_number:'',
+            parent_surname:'',
+            parent_name:'',
+            parent_middle_name:'',
+            parent_phone:'',
+            parent_email:'',
+            english_level:2,
+            health:'',
+            category:'',
+            t_shirt:3,
+            status:1,
+           contract:'',
+           summ:0
+
+        }
         // sql query
         var table='members';
         //pagination varibale//
@@ -527,7 +569,9 @@
         vn.param = '';
         //Modal window
         vn.itemId;
+
         vn.showPopUpMsg = {visible:false};
+
 
         vn.openPopUp = function( item ) {
             vn.popText=item.surname+' '+item.name;
@@ -535,6 +579,7 @@
             vn.itemId=item.id;
 
         }
+        vn.count= 102;
         vn.closePopup=function(){
             vn.showPopUpMsg = {visible:false};
         }
@@ -544,14 +589,38 @@
 
         vn.showUpdateModal = {visible:false};
 
-        vn.openUpdateModal = function( item ) {
+        vn.openUpdateModal = function( item,prop ) {
             vn.updateText= item.surname+' '+item.name;
             vn.showUpdateModal = {visible:true};
-
-console.log(item.surname+' '+item.name)
+                console.log(item.surname+' '+item.name);
+            vn.updateModalInf=prop;
+            console.log(vn.updateModalInf+' prop modal');
         }
         vn.closePopup=function(){
             vn.showPopUpMsg = {visible:false};
+        }
+        vn.closePopupUpdateModal=function(){
+            vn.showUpdateModal = {visible:false};
+        }
+        vn.saveUpdateModal=function(){
+            vn.showUpdateModal = {visible:false};
+
+           /* if(vn.newMember['surname']&&vn.newMember['name']&&vn.newMember['parent_surname']&&vn.newMember['parent_name']&&vn.newMember['full_years']!='') {*/
+                console.log(' The condition worked');
+                $http.put('/api//members/'+ vn.updateMember.id,vn.updateMember).then(function (modifiedItem) {
+                    for (var i = 0; i < vn.items.length; i++) {
+                        if (vn.items[i].id == modifiedItem.id) {
+                            vn.items[i] = modifiedItem;
+                            break;
+                        }
+                    }
+
+
+                });
+                vn.refresh();
+
+            vn.clearNewMemeber();
+
         }
 
         //End modal window update
@@ -634,6 +703,8 @@ console.log(item.surname+' '+item.name)
                 console.log(  vn.items)
             })
 
+
+
             /* console.log(stringQuery);
              console.log(strEmpty);*/
 
@@ -641,6 +712,8 @@ console.log(item.surname+' '+item.name)
 
 
         }
+
+
 
         function sortProp(obj){
             var arr=[];
@@ -693,40 +766,153 @@ console.log(item.surname+' '+item.name)
         }
 
         vn.addUpMembers= function(item){
-
+            vn.updateMember={
+                add_inf:'',
+                profile:'',
+                pref_profile:'',
+                pref_profile2:'',
+                them_profile:'',
+                experience:'',
+                results:'',
+                teacher_recomend:'',
+                past_participation:'',
+                RF_subject:1,
+                city:'',
+                street:'',
+                building:'',
+                corpus:'',
+                appart:'',
+                postcode:'',
+                school:2,
+                class:'',
+                hobby:'',
+                activity:'',
+                surname:'',
+                name:'',
+                middle_name:'',
+                birthday:0,
+                full_years:'',
+                phone_number:'',
+                parent_surname:'',
+                parent_name:'',
+                parent_middle_name:'',
+                parent_phone:'',
+                parent_email:'',
+                english_level:2,
+                health:'',
+                category:'',
+                t_shirt:3,
+                status:1,
+                contract:'',
+                summ:0,
+                id:0
+            }
+            vn.updateMember=item;
+            vn.updateMember.birthday=0;
             vn.showViewMember = {visible:true};
             console.log('vn.showVieMmember');
             console.log('item ='+item.surname);
             vn.viewItem=item;
             console.log('item ='+vn.viewItem.name);
         }
+        vn.addMembers= function(item){
+
+            vn.addMemberForm = {visible:true};
+
+
+            vn.viewItem=item;
+
+        }
         vn.closeAddUpMembers= function(item){
 
             vn.showViewMember = {visible:false};
 
         }
+        vn.closeAddMembers= function(item){
+
+            vn.addMemberForm = {visible:false};
+
+        }
         vn.data={visible : false};
-        vn.upAddUpdate= function(item ){
-            var inf=document.getElementById('inf');
-            var update=document.getElementById('update');
-            var pen=document.getElementById('pen');
+        //----------------------------------update
+        vn.upAddUpdate= function(item,prop){
+            console.log(prop+' prop');
+            console.log(item.id+' prop id');
+            var inf=document.getElementById(prop);
+            var update=document.getElementById(prop+'update');
+            var pen=document.getElementById(prop+'pen');
             inf.removeAttribute('readonly');
             vn.data={visible : true};
 
             inf.style.backgroundColor='white';
 
         }
-        vn.saveUpdate=function(item){
-            var inf=document.getElementById('inf');
-            var update=document.getElementById('update');
-            var pen=document.getElementById('pen');
+        vn.upAddUpdatePraty= function(item,prop){
+            console.log(prop+' prop');
+            console.log(item.id+' prop id');
+            var inf=document.getElementById(prop);
+            var update=document.getElementById(prop+'update');
+            var pen=document.getElementById(prop+'pen');
+
+            vn.data={visible : true};
+
+
+
+        }
+        vn.saveUpdate=function(item,prop){
+            var inf=document.getElementById(prop);
+            var update=document.getElementById(prop+'update');
+            var pen=document.getElementById(prop+'pen');
             inf.setAttribute('readonly',true);
             vn.data={visible : false};
-            console.log(item);
-            vn.openUpdateModal(item);
+            console.log(item+' updatw');
+            vn.openUpdateModal(item,prop);
+
+        }
+        vn.saveUpdatePraty=function(item,prop){
+            var inf=document.getElementById(prop);
+            var update=document.getElementById(prop+'update');
+            var pen=document.getElementById(prop+'pen');
+
+            vn.data={visible : false};
+            console.log(item+' updatw');
+            vn.openUpdateModal(item,prop);
 
         }
 
+        vn.addNewMemeber=function( ) {
+            console.log(vn.newMember);
+            console.log('Tvou mat');
+            vn.showPopUpWarning={visible:true};
+
+                if(vn.newMember.surname&&vn.newMember.name&&vn.newMember.parent_surname&&vn.newMember.parent_name&&vn.newMember.full_years==''){
+                    vn.showPopUpWarning={visible:true};
+                 console.log('wrning');
+                    console.log('Tvou zad');
+
+                }
+
+
+            if(vn.newMember['surname']&&vn.newMember['name']&&vn.newMember['parent_surname']&&vn.newMember['parent_name']&&vn.newMember['full_years']!='') {
+                $http.post('/api/members/add', vn.newMember).then(function (item) {
+                    vn.items.push(item);
+                    console.log(item);
+                    vn.addMemberForm = {visible: false};
+                });
+            }
+        }
+        vn.closeWarning=function(){
+            vn.showPopUpWarning={visible:false};
+        }
+        vn.clearNewMemeber=function(){
+
+                console.log(vn.newMember['id']+' preclear');
+
+            for(var i in vn.newMember){
+                vn.newMember[i]='';
+            }
+            console.log(vn.newMember);
+        }
 
         vn.refresh();
     }
