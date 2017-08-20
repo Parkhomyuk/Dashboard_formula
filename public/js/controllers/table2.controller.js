@@ -881,7 +881,7 @@
         }
 
         vn.addNewMemeber=function( ) {
-            console.log(vn.newMember);
+
             console.log('Tvou mat');
             /*vn.showPopUpWarning={visible:true};*/
 
@@ -891,14 +891,16 @@
                     console.log('Tvou zad');
 
                 }*/
-
+                vn.subitem;
 
             /*if(vn.newMember['surname']&&vn.newMember['name']&&vn.newMember['parent_surname']&&vn.newMember['parent_name']&&vn.newMember['full_years']!='') {*/
                 $http.post('/api/members/add', vn.newMember).then(function (item) {
-                    vn.items.push(item);
-                    console.log(item);
-                    vn.addMemberForm = {visible: false};
+
+                  vn.subitem=item;
+
                 });
+            vn.items.push(vn.subitem);
+            vn.addMemberForm = {visible: false};
             /*}*/
         }
         vn.closeWarning=function(){
