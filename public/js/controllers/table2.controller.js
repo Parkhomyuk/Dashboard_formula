@@ -883,7 +883,7 @@
         vn.addNewMemeber=function( ) {
             console.log(vn.newMember);
             console.log('Tvou mat');
-            vn.showPopUpWarning={visible:true};
+            /*vn.showPopUpWarning={visible:true};*/
 
                /* if(vn.newMember.surname&&vn.newMember.name&&vn.newMember.parent_surname&&vn.newMember.parent_name&&vn.newMember.full_years==''){
                     vn.showPopUpWarning={visible:true};
