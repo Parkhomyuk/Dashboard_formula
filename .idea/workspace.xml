@@ -2,136 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ab67687-987d-476b-b7f4-1d371f100fb2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/files/2V_vkjfD5Gg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/files/thumbnail/2V_vkjfD5Gg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/blog/post_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/blog/post_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/girls-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/girls-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/girls-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/music-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/music-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/music-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/music-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/music-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/nature-7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/space-1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/gallery/space-2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/nature.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/ocean.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/avatar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/no-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/images/users/user7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Animal 48.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Lotus Sport Exige Gt3 01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Photoshop_Multi-coloured_butterflies_023732_.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Quiet Getaway, Lake Tahoe, Nevada-565362.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Space_Launching_pad_023724_.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Sport_Extreme__Waves__Ocean__Risk__Surfing_023731_.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/Sritney_Spears2_1920x1200.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/World_other_world_Costa_Rica__Puntarenas_023746_.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/peugeot_908rc-1600x1200.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/u3013_1278_53405-1600x1200.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/u9644_3151_love_4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/white-aston-martin-wallpaper-1920x1080-1008078.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/white_curved_building-1920x1200.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/wide-wallpaper-1920x1080-001.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/wide-wallpaper-1920x1080-001234.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/Images/windows_7___dragon-2560x1600.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/Payment Icons.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/Supervisor.doc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/archive.rar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/archive.tar.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/archive.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/fireworks.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/fishes.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/phuket.tiff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/rm.wav" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/virus.exe" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/vmware-win-ie8-elfinder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-icons_2694e8_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-icons_3d80b3_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-icons_72a7cf_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/ajax_fullcalendar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.asp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.aspx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.cf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.pl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree_huck.lasso" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/filetree/jqueryFileTree_sabourdin.lasso" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/UploadHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/cors/postmessage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/cors/result.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/files/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/fileupload/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/plugins/nvd3/cumulativeLineData.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/plugins/nvd3/linePlusBarData.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/plugins/nvd3/multiBarHorizontalData.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/plugins/nvd3/stackedAreaData.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/upload.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/YUICompressor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/books.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/elFinder.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/elFinder.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/elfinder.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/elfinder.full.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/google.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/milter-greylist.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/munin_httptime.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/uploads/MIME-Types/test-pivot.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/controllers/address.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/directives/addMember.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/directives/modal_warning.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/cupertino/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fullcalendar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/fullcalendar.print.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/gcal.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/lib/moment.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/templates/address_book.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/templates/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/templates/warnning.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers/table2.controller.js" afterPath="$PROJECT_DIR$/public/js/controllers/table2.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/formula.js" afterPath="$PROJECT_DIR$/public/js/formula.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/addMember.html" afterPath="$PROJECT_DIR$/public/templates/addMember.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/green.html" afterPath="$PROJECT_DIR$/public/templates/green.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/main.html" afterPath="$PROJECT_DIR$/public/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/modalUpdate.html" afterPath="$PROJECT_DIR$/public/templates/modalUpdate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/modalWin.html" afterPath="$PROJECT_DIR$/public/templates/modalWin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/table.html" afterPath="$PROJECT_DIR$/public/templates/table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/viewMember.html" afterPath="$PROJECT_DIR$/public/templates/viewMember.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/members.js" afterPath="$PROJECT_DIR$/routes/members.js" />
     </list>
     <ignored path="Dashboard_formula.iws" />
@@ -233,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="members.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="members.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/members.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="246" column="34" selection-start-line="246" selection-start-column="34" selection-end-line="246" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.8292683">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -253,10 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewMember.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="viewMember.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/templates/viewMember.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16293278">
+            <state vertical-scroll-proportion="-0.96385545">
               <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding />
             </state>
@@ -349,9 +219,9 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/templates/address_book.html" />
         <option value="$PROJECT_DIR$/public/templates/modalUpdate.html" />
-        <option value="$PROJECT_DIR$/routes/members.js" />
         <option value="$PROJECT_DIR$/public/js/controllers/table2.controller.js" />
         <option value="$PROJECT_DIR$/public/templates/viewMember.html" />
+        <option value="$PROJECT_DIR$/routes/members.js" />
       </list>
     </option>
   </component>
@@ -702,7 +572,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1917" height="1040" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13837147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1125,14 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/members.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="246" column="34" selection-start-line="246" selection-start-column="34" selection-end-line="246" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/addMember.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5060241">
@@ -1172,8 +1034,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/templates/viewMember.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16293278">
+        <state vertical-scroll-proportion="-0.96385545">
           <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/members.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8292683">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
           <folding />
         </state>
       </provider>
