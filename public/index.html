@@ -52,10 +52,12 @@
                         <a href="#/"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
                     </li>                    
 
-                            <li><a href="#!main_table"><span class="fa fa-image"></span> Main table</a></li>
+                            <li><a href="#!main_table"><span class="fa fa-table"></span> Main table</a></li>
                             <li><a href="#!green"><span class="fa fa-user"></span> Profile</a></li>
-                            <li><a href="#!calendar"><span class="fa fa-user"></span> Calendar</a></li>
-                            <li><a href="#!address_book"><span class="fa fa-users"></span> Members manage</a></li>
+                            <li><a href="#!calendar"><span class="fa fa-calendar"></span> Calendar</a></li>
+                            <li><a href="#!address_book"><span class="fa fa-users"></span> Address book</a></li>
+                            <li><a href="#!directories"><span class="fa fa-folder"></span>Directories</a></li>
+                            <li><a href="#!import"><span class="fa fa-tasks"></span>Import from Excel</a></li>
 
                     
                              </ul>
@@ -176,6 +178,7 @@
         <!-- START PLUGINS -->
         <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></link>
         <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+
         <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>-->
         <!-- END PLUGINS -->
@@ -196,7 +199,9 @@
         <script type="text/javascript" src="js/plugins/moment.min.js"></script>
         <script type="text/javascript" src="js/plugins/daterangepicker/daterangepicker.js"></script>
         <!-- END THIS PAGE PLUGINS-->
-
+        <!-- START LIB -->
+        <script type="text/javascript" src="lib/xlsx.full.min.js"></script>
+        <!-- END LIB -->
         <!-- START ANGULARJS -->
         <script type="text/javascript" src="libs/angular/angular.min.js"></script>
         <script type="text/javascript" src="libs/angular-route/angular-route.min.js"></script>
@@ -206,19 +211,31 @@
         <script type="text/javascript" src="js/controllers/table2.controller.js"></script>
         <script type="text/javascript" src="js/controllers/address.controller.js"></script>
         <script type="text/javascript" src="js/controllers/dashboardCtrl.js"></script>
+        <script type="text/javascript" src="js/controllers/direct.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/school.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/subject_rf.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/english.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/t_shirt.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/category.controller.js"></script>
+        <script type="text/javascript" src="js/controllers/status.controller.js"></script>
         <script type="text/javascript" src="js/directives/main-table.js"></script>
         <script type="text/javascript" src="js/directives/modal.js"></script>
         <script type="text/javascript" src="js/directives/modal_warning.js"></script>
         <script type="text/javascript" src="js/directives/modal_update.js"></script>
         <script type="text/javascript" src="js/directives/viewMember.js"></script>
         <script type="text/javascript" src="js/directives/addMember.js"></script>
+        <script type="text/javascript" src="js/directives/importMember.js"></script>
+        <script type="text/javascript" src="js/directives/pagination.directive.js"></script>
+        <script type="text/javascript" src="js/directives/direction.directive.js"></script>
         <script type="text/javascript" src="js/filters/sort.filter.js"></script>
         <script type="text/javascript" src="js/services/express.service.js"></script>
+        <script type="text/javascript" src="js/services/pagination.service.js"></script>
         <script type="text/javascript" src="lib/moment.min.js"></script>
         <script type="text/javascript" src="js/calendar.js"></script>
 
         <!-- END ANGULARJS -->
         <script src=" https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
     <!-- END SCRIPTS -->         
     </body>
 </html>

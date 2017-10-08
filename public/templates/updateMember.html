@@ -1,0 +1,406 @@
+<div id="popUpMsg-bg" ng-show="table.showViewMember.visible" >
+
+
+    <div class=" dialog ">
+        <div class="page-content-wrap">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form class="form-horizontal">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">Member: <strong>{{table.viewItem.surname}} {{table.viewItem.name}}</strong></h1>
+                                <ul class="panel-controls">
+                                    <li> <span class="fa fa-times" ng-click="table.closeAddUpMembers()"></span> </li>
+                                </ul>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon " style="width: 10%" >Information:</span>
+                                            <span class="input-group-addon  " id="add_infpen" ng-click="table.upAddUpdate(table.viewItem,'add_inf')" ng-hide="table.data.visible" >   <i class="fa fa-pencil" aria-hidden="true" ></i></span>
+                                            <span class="input-group-addon  " id="add_infupdate" ng-click="table.saveUpdate(table.viewItem,'add_inf')"  ng-show="table.data.visible" >   <i class="fa fa-floppy-o"  aria-hidden="true"></i></span>
+
+                                            <textarea   id='add_inf' class="form-control  " readonly rows="7" style="font-size: 2rem; background-color: grey" ng-model="table.updateMember.add_inf">{{table.viewItem.add_inf}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.add_inf]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon " style="width: 10%">Profile:</span>
+                                            <span class="input-group-addon"    >   <i id="profilepen"  class="fa fa-pencil" aria-hidden="true" ng-click="table.upAddUpdate(table.viewItem,'profile')" ></i><i  id="profileupdate" class="fa fa-floppy-o"   aria-hidden="true" ng-click="table.saveUpdate(table.viewItem,'profile')" style="display: none"></i></span>
+                                           <!-- <span class="input-group-addon"   id="profileupdate" >   <i  class="fa fa-floppy-o"   aria-hidden="true" ng-click="table.saveUpdate(table.viewItem,'profile')" style="display: none"></i></span>-->
+
+                                            <textarea id="profile"  class="form-control" readonly style="font-size: 2rem; background-color: grey">{{table.viewItem.profile}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.profile]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Prefer profile:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.pref_profil}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.pref_profil]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Prefer second:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.pref_profil2}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.pref_profil2]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Prefer thema:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.them_profile}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.them_profile]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width: 10%">Experence:</span>
+                                        <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                        <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.experience}}</textarea>
+                                    </div>
+                                    <span ng-if="[table.viewItem.experience]==''" class=" warn">Warning field is empty</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width: 10%">Results of <br>participation<br> in the Olympiads :</span>
+                                        <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                        <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.results}}</textarea>
+                                    </div>
+                                    <span ng-if="[table.viewItem.results]==''" class=" warn">Warning field is empty</span>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Name of the <br>teacher who can<br> provide the<br> recommendation:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.teacher_recomend}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.teacher_recomend]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Past paricipation:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.past_paricipation}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.past_paricipation]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Address:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey" ng-if="[table.viewItem.RF_subject]!=''" >Субъект РФ:{{table.viewItem.RF_subject}}  city:{{table.viewItem.city}} street:{{table.viewItem.street}}  buld:{{table.viewItem.building}}  corp:  {{table.viewItem.corpus}}    appart:  {{table.viewItem.appart}}    postcod:  {{table.viewItem.post_code}}</textarea>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey" ng-if="[table.viewItem.RF_subject]==''" >city:{{table.viewItem.city}} street:{{table.viewItem.street}}  buld:{{table.viewItem.building}}  corp:  {{table.viewItem.corpus}}    appart:  {{table.viewItem.appart}}    postcod:  {{table.viewItem.post_code}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.city]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width: 10%">School:</span>
+                                        <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                        <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.school}}</textarea>
+                                    </div>
+                                    <span ng-if="[table.viewItem.school]==''" class=" warn">Warning field is empty</span>
+                                </div>
+                            </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Class:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.class}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.class]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Hobby:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.hobby}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.hobby]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Activity:</span>
+                                            <span class="input-group-addon">   <i class="fa fa-pencil" aria-hidden="true" ng-click="first.upAddUpdate('update',item)"></i></span>
+                                            <textarea   class="form-control" disabled  style="font-size: 2rem; background-color: grey"  >{{table.viewItem.activity}}</textarea>
+                                        </div>
+                                        <span ng-if="[table.viewItem.activity]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                               <!-- <div><h4>Experence: </h4>{{table.viewItem.experience}}</div>
+                                <div><h4>Results of participation in the Olympiads : </h4>{{table.viewItem.results}}</div>
+                                <div><h4>Name of the teacher who can provide the recommendation: </h4>{{table.viewItem.teacher_recomend}}</div>
+                                <div><h4>Past paricipation:</h4> {{table.viewItem.past_paricipation}}</div>
+                                <div><h4>Address:</h4> {{table.viewItem.RF_subject}}' ,'{{table.viewItem.city}}', '{{table.viewItem.street}}', '{{table.viewItem.RF_subject}}', buld:'{{table.viewItem.building}}' ,corp: '{{table.viewItem.corpus}}' , appart: '{{table.viewItem.appart}}' , post cod: '{{table.viewItem.post_code}}</div>
+                                <div><h4>Scholl:</h4> {{table.viewItem.school}}</div>
+                                <div><h4>Class:</h4> {{table.viewItem.class}}</div>
+                                <div><h4>Hobby:</h4> {{table.viewItem.hobby}}</div>
+                                <div><h4>Activity:</h4> {{table.viewItem.activity}}</div>-->
+
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-4">
+                                <h4>Member </h4>
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Surname</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.surname}}"/>
+                                        </div>
+                                        <span class="help-block">warnings</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Name</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.name}}"/>
+                                        </div>
+                                        <span class="help-block">warnings</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Middle name</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.middle_name}}"/>
+                                        </div>
+                                        <span class="help-block">warnings</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Birthday</span>
+
+                                            <input type="date" class="form-control"  value="{{table.viewItem.birthday| date:'dd/MM/yyyy'}}"/>
+                                        </div>
+                                        <span class="help-block">warnings</span>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Full years</span>
+                                                <input type="text" class="form-control" value="{{table.viewItem.full_years}}"/>
+                                            </div>
+                                            <span class="help-block">warnings</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Phone number</span>
+                                                <input type="text" class="form-control" value="{{table.viewItem.phone_number}}"/>
+                                            </div>
+                                            <span class="help-block">warnings</span>
+                                        </div>
+                                    </div>
+
+                            </div>
+
+                                      <div class="col-md-4">
+                                        <h4>Member's parents </h4>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Parent surname</span>
+                                                    <input type="text" class="form-control" value="{{table.viewItem.parent_surname}}"/>
+                                                </div>
+                                                <span class="help-block">warnings</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">name</span>
+                                                    <input type="text" class="form-control" value="{{table.viewItem.parent_name}}"/>
+                                                </div>
+                                                <span class="help-block">warnings</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Parent middle name</span>
+                                                    <input type="text" class="form-control" value="{{table.viewItem.parent_middle_name}}"/>
+                                                </div>
+                                                <span class="help-block">warnings</span>
+                                            </div>
+                                        </div>
+
+                                          <div class="form-group">
+
+                                              <div class="col-md-9">
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">Phone number</span>
+                                                      <input type="text" class="form-control" value="{{table.viewItem.parent_phone}}"/>
+                                                  </div>
+                                                  <span class="help-block">warnings</span>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+
+                                              <div class="col-md-9">
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">Phone number</span>
+                                                      <input type="text" class="form-control" value="{{table.viewItem.parent_email}}"/>
+                                                  </div>
+                                                  <span class="help-block">warnings</span>
+                                              </div>
+                                          </div>
+
+
+                                    </div>
+                                <div class="col-md-4">
+                                <h4>Member's characteristics </h4>
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">English level</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.english_level}}"/>
+                                        </div>
+                                        <span class="help-block">warnings</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Health</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.health}}"/>
+                                        </div>
+                                        <span class="help-block">warnings</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">Category</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.category}}"/>
+                                        </div>
+                                        <span ng-if="[table.viewItem.category]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">T-shirt</span>
+                                            <input type="text" class="form-control" value="{{table.viewItem.t_shirt}}"/>
+                                        </div>
+                                        <span ng-if="[table.viewItem.t_shirt]==''" class="help-block">warnings</span>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Got acquainted</span>
+                                                <input type="text" class="form-control" value="{{table.viewItem.got_acquent}}"/>
+                                            </div>
+                                            <span class="help-block">warnings</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Status</span>
+                                                <input type="text" class="form-control" value="{{table.viewItem.status}}"/>
+                                            </div>
+                                            <span class="help-block">warnings</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Contract</span>
+                                                <input type="text" class="form-control" value="{{table.viewItem.contract}}"/>
+                                            </div>
+                                            <span class="help-block">warnings</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Summ</span>
+                                                <input type="text" class="form-control" value="{{table.viewItem.summ}}"/>
+                                            </div>
+                                            <span class="help-block">warnings</span>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                            <div class="panel-footer">
+                                <!--<button class="btn btn-default">Clear Form</button>
+                                <button class="btn btn-primary pull-right">Submit</button>-->
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <modal-update></modal-update>
+    </div>
+
+
+
+
+
+</div>

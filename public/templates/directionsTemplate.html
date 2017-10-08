@@ -1,0 +1,38 @@
+<h3 style='margin-left: 1vw'>{{data.settings.title.title}}</h3>
+<div class="grid_table"><button class="btn btn-info">Add data</button> <p></p> <input type="text" placeholder="search" ng-model="search"></div>
+
+    <table>
+       <!-- <caption class="titleTable"><h3>{{data.settings.title.title}}</h3> </caption>-->
+
+
+        <tr>
+            <th ng-repeat="header in data.settings.columns">{{header.title}}</th>
+        </tr>
+        <tr ng-repeat="(key,value) in data.itemsA | filter: search" ng-model="data.ss"  >
+            <td>{{$index+1}}</td>
+            <td >{{value[data.settings.columns.id.db_name]}}</td>
+            <td class="name" >{{value[data.settings.columns.name.db_name]}}</td>
+            <td ><button class="btn btn-danger">Edit</button></td>
+        </tr>
+
+    </table>
+
+<!--zzz{{(data.ss | filter: search).length}}-->
+<p ng-model='data.s1'>{{(data.ss | filter: search).length}}</p>
+
+    <div>
+        <div class=" "  >
+
+            <div class="btn-group " style="text-align: left; margin-top: 1vh; margin-left: 1vw">
+                <label  >Items {{data.countItems}} / Pages {{data.pages}}/ Current page {{data.pagerItem+1}} </label>
+
+            </div>
+            <ul class="pagination" style="margin-left: 1vw">
+                <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
+                <li ng-repeat="page in  data.pagesArray"  >
+                    <a id='page{{page.page}}' ng-click="getPage(page.page)">{{page.page}}</a>
+                </li>
+                <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>

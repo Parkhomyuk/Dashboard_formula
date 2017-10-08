@@ -11,7 +11,7 @@ var mysql=require('mysql');
     database : 'formula_unity',
     debug: false
 });*/
- /* var pool=mysql.createPool({
+   /* var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'localhost',
     user     : 'root',
@@ -20,7 +20,7 @@ var mysql=require('mysql');
     debug: false
 });*/
 
-var pool=mysql.createPool({
+  var pool=mysql.createPool({
     connectionLimit:1000,
     host     : 'us-cdbr-iron-east-05.cleardb.net',
     user     : 'b5165b49633754',
@@ -102,7 +102,7 @@ router.get('/members', function(req, res) {
                     rows: rows.length,
                 }
               res.write(JSON.stringify(rows));
-               /* console.log(JSON.stringify(rows));*/
+              /* console.log(JSON.stringify(rows));*/
                 res.end();
             }
            connection.release();
@@ -111,6 +111,8 @@ router.get('/members', function(req, res) {
 });
 
 router.get('/members/search/:term', function(req, res) {
+    /*console.log('par'+ req.params.term);*/
+/*var re=req.params.term.replace(/xoxxooxl/g, '%\'');*/
 var re=req.params.term.replace(/xoxxooxl/g, '%\'');
 
 
@@ -176,7 +178,8 @@ router.post('/members/add', function(req, res) {
         if (err) {
             console.error("An error occurred: " + err);
         }
-console.log(req.body);
+/*console.log(req.body);*/
+        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){  });
        connection.query('insert into members set ?', req.body,
             function(err, rows) {
                 if (err) {
@@ -198,19 +201,20 @@ console.log(req.body);
                 }
 
 
-                connection.release();
+
+                connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ });
             });
 
     });
 
 });
 router.delete('/members/:id', function(req, res) {
-    console.log(req.params.id+'this is Params id');
+   /* console.log(req.params.id+'this is Params id');*/
     pool.getConnection(function(err, connection) {
         if (err) {
             console.error("An error occurred: " + err);
         }
-        console.log(req.params.id+' ffff');
+      /*  console.log(req.params.id+' ffff');*/
         connection.query('SET FOREIGN_KEY_CHECKS=0',function(){  });
         connection.query('delete from members where id=?', [req.params.id], function(err, rows) {
 
@@ -227,8 +231,8 @@ router.delete('/members/:id', function(req, res) {
                     detail: rows
 
                 }
-                console.log(req.params.id+' del');
-                console.log('delete from members where id=?', [req.params.id]+' del');
+              /*  console.log(req.params.id+' del');
+                console.log('delete from members where id=?', [req.params.id]+' del');*/
                 res.write(JSON.stringify(result));
                 res.end();
 
@@ -243,16 +247,17 @@ router.delete('/members/:id', function(req, res) {
 });
 router.put('/members/:id', function(req, res) {
     /*  req.assert('lastName', 'Last Name is required').notEmpty();*/
-    console.log( req.body +' params');
-    console.log( req.params.id +' params');
+  /*  console.log( req.body +' params');
+    console.log( req.params.id +' params');*/
+
     pool.getConnection(function(err, connection) {
         if (err) {
             console.error("An error occurred: " + err);
         }
-
+        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){  });
         connection.query('update members set ? where id = ?', [req.body, req.params.id],
             function(err, rows) {
-                console.log('update members set ? where id = ?', [req.body, req.params.id]);
+              console.log('update members set ? where id = ?', [req.body, req.params.id]);
 
                 if (err) {
                     throw err;
@@ -265,13 +270,16 @@ router.put('/members/:id', function(req, res) {
                         detail: rows
 
                     }
-                    console.log(JSON.stringify(result));
+                   /* console.log(JSON.stringify(result));*/
                     res.write(JSON.stringify(result));
                     res.end();
                 }
-
                 connection.release();
+                connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ connection.release();});
+                connection.destroy();
             });
+      /*  connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ connection.release();});*/
+
 
     });
 
@@ -629,6 +637,117 @@ router.delete('/members/:id', function(req, res) {
 
 });
 */
+router.get('/members/id/:id', function(req, res) {
+    /*console.log(req.params);*/
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
 
+        connection.query('select * from members,rf_subject, english_level, schools, t_shirt, status where id=? AND ' +
+            '( members.RF_subject=rf_subject.subject_id AND members.english_level=english_level.level_id AND members.school=schools.school_id AND members.t_shirt=t_shirt.shirt_id AND members.status=status.statusid  )'
+            , [req.params.id], function(err, rows) {
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+           /*     console.log(JSON.stringify(result)+' way');
+                console.log(req.params+' way');
+                console.log('select * from members where id='+req.params.id+ ' way');*/
+                res.write(JSON.stringify(rows));
+
+                res.end();
+            }
+            connection.release();
+        });
+        });
+    });
+router.get('/members/english/', function(req,res){
+    pool.getConnection(function(err,connection) {
+        if (err) {
+          /*  console.log('wrong request');*/
+        }
+        connection.query('select * from english_level ', [req.body], function(err, rows)
+        {
+            if (err) {
+                throw err;
+            }
+
+            else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+
+                res.write(JSON.stringify(rows));
+                res.end();
+            }
+
+            connection.release();
+
+        });
+    })
+})
+
+router.get('/members/subject', function(req,res){
+    pool.getConnection(function(err,connection){
+        if(err){
+           /* console.log('wrong requext');*/
+        }
+        connection.query('select * from rf_subject ', [req.body], function(ree, rows){
+            if(err){
+                throw err;
+            }
+            else{
+                res.writeHead(200,{
+                    "Content-Type":'application/json'
+                });
+                var result={
+                    success: true,
+                    rows: rows.length,
+                }
+
+                res.write(JSON.stringify(rows));
+                res.end();
+            }
+            connection.release();
+        })
+    })
+})
+router.get('/members/directly/:param', function(req,res){
+   /* console.log('request =...'+req.params.param);*/
+    pool.getConnection(function(err,connection){
+        if(err){
+            console.log('wrong requext')
+        }
+        connection.query('select * from '+req.params.param, function(ree, rows){
+            if(err){
+                throw err;
+            }
+            else{
+                res.writeHead(200,{
+                    "Content-Type":'application/json'
+                });
+                var result={
+                    success: true,
+                    rows: rows.length,
+                }
+               /* console.log(JSON.stringify(rows));*/
+                res.write(JSON.stringify(rows));
+                res.end();
+            }
+            connection.release();
+        })
+    })
+})
 module.exports = router;
 

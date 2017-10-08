@@ -318,8 +318,10 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
 .twelfth > span {
   color: rgba(62, 62, 62, 0.48); }
 
+/*
 span {
   cursor: pointer; }
+*/
 
 .pagers {
   width: 100%;
@@ -418,4 +420,82 @@ view and update member*/
 }
 .xn-icon-button,.xn-search{
   z-index: 0;
+}
+/*
+window add newMember*/
+.consolidation{
+  width:100%;
+  border: 2px solid #1a14ff;
+  border-radius: 10px;
+  padding: 0vw 2vw 0.5vw 2vw;
+  background-color: rgba(0, 179, 238, 0.29);
+  margin: 1vw 2vw  1vw 0;
+  box-shadow: inset 0 0 6px;
+}
+.header-consolidation{
+  width:inherit;
+  height: 5vh;
+  text-align: left;
+  color: white;
+}
+.input-group{
+  width: 100%;
+}
+.vert{
+  height: 70vh;
+}
+#updateMemberBtn, #saveupdateMemberBtn{
+  margin-left: 2vw;
+}
+.choose{
+  background-color: red;
+}
+/*
+Grid directories*/
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+/*  grid-auto-rows: 15vh;*/
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vh;
+}
+.grid .table-directions{
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: wheat;
+}
+/*
+Table Directions*/
+.table-directions table{
+  margin: 1% 1% 0vw 1%;
+  width: 95%;
+}
+.table-directions th{
+  border: 1px solid black;
+  background-color: rgba(84, 84, 84, 0.36);
+  padding: 1.2vh;
+  text-align: center;
+  color: blue;
+
+}
+.table-directions td{
+  border: 1px solid black;
+  background-color: rgba(226, 237, 158, 0.36);
+  padding: 1.2vh;
+  text-align: center;
+  color: black;
+
+}
+.table-directions .titleTable{
+  text-align: center;
+}
+.table-directions   .name{
+  text-align: left;
+}
+.grid_table{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  text-align: center;
 }

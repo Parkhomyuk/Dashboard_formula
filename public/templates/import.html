@@ -1,0 +1,38 @@
+<h1 style="margin-left: 2vw;color:blue">{{title}}</h1>
+<input type="file" id="file" name="file" import-sheet-js="" multiple="false"/>
+<button ng-click="add()">Add</button>
+  <button style="margin: 0vw 0vw 1vw 2vw; " class="btn btn-primary">Add all new</button>
+<table class="table table-bordered smarttable" style="width: 80%; ">
+    <tr>
+
+        <!--<th ng-repeat=" (key, value) in impMember[0]  | limitTo: 4">{{key}} </th>-->
+        <th style="text-align: center">Name</th>
+        <th>middle name</th>
+        <th>surname</th>
+        <th>birthday</th>
+        <th>coincidences</th>
+        <th>missing required value</th>
+        <th> View</th>
+        <th> Add</th>
+        <th> Verified</th>
+
+
+
+    </tr>
+    <tr ng-repeat=" m in impMember">
+        <td>{{m['Имя претендента']}}</td>
+        <td>{{m['Отчество претендента']}}</td>
+        <td>{{m['Фамилия претендента']}}</td>
+        <td>{{m['Дата рождения претендента']| date :  "dd.MM.yyyy"}}</td>
+        <th>coincidences</th>
+        <th>complete</th>
+         <th><btton class="btn btn-info" ng-click="addMemberFrom(m)">View</btton></th>
+        <th><btton class="btn btn-primary" ng-click="addMemberFrom(m)">Add</btton></th>
+
+        <th><label class="switch switch-small">
+            <input type="checkbox" value="1"/>
+            <span></span>
+        </label>
+        </th>
+    </tr>
+</table>

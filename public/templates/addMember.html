@@ -6,15 +6,270 @@
 
                     <form class="form-horizontal"   ng-submit="table.addNewMemeber()">
                         <div class="panel panel-default">
+                            <ul class="panel-controls">
+                                <li> <span class="fa fa-times" ng-click="table.closeAddMembers()"></span> </li>
+                            </ul>
                             <div class="panel-heading">
                                <!-- <h1 class="panel-title">Member: <strong>{{table.viewItem.surname}} {{table.viewItem.name}}</strong></h1>-->
+
                                  <h1 class="panel-title">Add Member </h1>
-                                <ul class="panel-controls">
-                                    <li> <span class="fa fa-times" ng-click="table.closeAddMembers()"></span> </li>
-                                </ul>
+
+                                <div>
+                                    <div class=" ">
+
+                                        <button class="btn btn-primary pull-right" type="submit" value="Submit"  >Submit</button>
+                                    </div>
+                                    <div> <button class="btn  btn-success pull-right" ng-click="table.clearform()">Clear</button></div>
+                                </div>
+
                             </div>
                             <div class="panel-body" style="background-color: grey">
-                                <div class="form-group">
+                                <div class="row" style="height: 20%">
+                                    <div class="col-md-4" >
+                                        <div class="consolidation vert"  >
+
+                                            <div class="form-group"  >
+                                                <div class="header-consolidation"><h2>Member:</h2></div>
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Surname</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.surname" />
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.surname]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Name</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.name"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.name]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Middle name</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.middle_name"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.middle_name]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Birthday</span>
+                                                        <input type="date" class="form-control" ng-model="table.newMemeberBirthday"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMemeberBirthday]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Full years</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.full_years"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.full_years]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Phone number</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.phone_number"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.phone_number]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4"  >
+
+                                        <div class="consolidation vert"  >
+                                            <div class="form-group">
+                                                <div class="header-consolidation"><h2>Member's parents</h2></div>
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Parent surname</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.parent_surname"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.parent_surname]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">name</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.parent_name"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.parent_name]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Parent middle name</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.parent_middle_name"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.parent_middle_name]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Phone number</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.parent_phone"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.parent_phone]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-12">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">E-mail</span>
+                                                        <input type="email" class="form-control" ng-model="table.newMember.parent_email"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.parent_email]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" >
+                                        <div class="consolidation vert"  >
+
+                                            <div class="form-group">
+                                                <div class="header-consolidation"><h2>Member's characteristics</h2></div>
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">English level</span>
+                                                        <!--<input type="text" class="form-control" ng-model="table.newMember.english_level"/>-->
+                                                        <select class="form-control" ng-model="table.selectedEnglish">
+                                                            <option value="{{is.english_level}}" ng-repeat=" is in table.getEnglishLevel"  >{{is.english_level}}</option>
+                                                        </select>
+
+
+                                                    </div>
+                                                    <span ng-if="[table.selectedEnglish]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Health</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.health"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.health]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Category</span>
+                                                        <!-- <input type="text" class="form-control" ng-model="table.newMember.category"/>-->
+                                                        <select class="form-control" ng-model="table.selectedCategory">
+                                                            <option value="{{cat.category}}" ng-repeat="cat in table.getCategory">{{cat.category}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <span ng-if="[table.selectedCategory]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">T-shirt</span>
+                                                        <select class="form-control" ng-model="table.selectedTShirt">
+                                                            <option value="{{tshirt.t_shirt}}" ng-repeat=" tshirt in table.getTShirtArr"  >{{tshirt.t_shirt}}</option>
+                                                        </select>
+                                                        <!-- <input type="text" class="form-control" ng-model="table.newMember.t_shirt"/>-->
+                                                    </div>
+                                                    <span ng-if="[table.selectedTShirt]=='no information' || [table.selectedTShirt]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Got acquainted</span>
+                                                        <!-- <input type="text" class="form-control" ng-model="table.newMember.got_acquent"/>-->
+
+                                                        <select class="form-control" ng-model="table.newMember.got_acquent" required  >
+
+                                                            <option value="no" >no</option>
+                                                            <option value="yes" >yes</option>
+                                                        </select>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.got_acquent]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Status</span>
+                                                        <!--<input type="text" class="form-control" ng-model="table.newMember.status"/>-->
+                                                        <select class="form-control" ng-model="table.selectedStatus">
+                                                            <option value="{{status.status}}" ng-repeat=" status in table.getStatus"  >{{status.status}}</option>
+                                                        </select>
+
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.status]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Contract</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.contract_number"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.contract_number]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Date depart. Contract </span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.contract_res"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.contract_res]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">Summ</span>
+                                                        <input type="text" class="form-control" ng-model="table.newMember.summ"/>
+                                                    </div>
+                                                    <span ng-if="[table.newMember.viewItem.summ]==''" class=" warn">Warning field is empty</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                               <!-- <div class="form-group">
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon " style="width: 10%" >Information:</span>
@@ -23,8 +278,8 @@
                                         </div>
                                         <span ng-if="[table.newMember.add_inf]==''" class=" warn">Warning field is empty</span>
                                     </div>
-                                </div>
-                                <div class="form-group">
+                                </div>-->
+                                <!--<div class="form-group">
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon " style="width: 10%">Profile:</span>
@@ -39,9 +294,9 @@
                                         <div class="input-group">
                                             <span class="input-group-addon" style="width: 10%">Prefer profile:</span>
 
-                                            <textarea   class="form-control"    style="font-size: 2rem;width:60vw;  " ng-model="table.newMember.pref_profil"  > </textarea>
+                                            <textarea   class="form-control"    style="font-size: 2rem;width:60vw;  " ng-model="table.newMember.pref_profile"  > </textarea>
                                         </div>
-                                        <span ng-if="[table.newMember.pref_profil]==''" class=" warn">Warning field is empty</span>
+                                        <span ng-if="[table.newMember.pref_profile]==''" class=" warn">Warning field is empty</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -103,42 +358,123 @@
                                         </div>
                                         <span ng-if="[table.newMember.past_participation]==''" class=" warn">Warning field is empty</span>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"  >Address :</span>
-                                            <textarea   class="form-control" disabled style="font-size: 2rem; width:60vw;"  >{{table.viewItem.city}}</textarea>
-                                           </div>
+                                </div>-->
+                                <div class="consolidation">
+                                    <div class="header-consolidation"><h2>Address:</h2></div>
+                                <div class="form-group"  >
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Postcode:</span>
+
+                                            <input   class="form-control" type="number"  style="font-size: 2rem; " ng-model="table.newMember.postcode" > </input>
+
+
+                                        </div>
+
+                                        <span ng-if="[table.newMember.postcode]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Subject of RF:</span>
+
+                                            <select class="form-control" ng-model="table.selectedRFSubject" style="font-size: 2rem; line-height: 20px; width:inherit ">
+                                                <option value="{{sub.RF_subject}}" ng-repeat=" sub in table.SubjectsOfRussia"  >{{sub.RF_subject}}</option>
+                                            </select>
+
+
+                                        </div>
+
+                                        <span ng-if="[table.selectedRFSubject]=='no information'" class=" warn">Warning field is empty</span>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">City:</span>
+
+                                            <input   class="form-control"   style="font-size: 2rem; " ng-model="table.newMember.city" > </input>
+
+
+                                        </div>
+
                                         <span ng-if="[table.newMember.city]==''" class=" warn">Warning field is empty</span>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon" style="width: 10%">School:</span>
+                                    <div class="col-md-4">
 
-                                            <textarea   class="form-control"   style="font-size: 2rem; width:60vw; " ng-model="table.newMember.school" > </textarea>
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Street:</span>
+
+                                            <input   class="form-control"   style="font-size: 2rem; " ng-model="table.newMember.street" > </input>
+
+
                                         </div>
-                                        <span ng-if="[table.newMember.school]==''" class=" warn">Warning field is empty</span>
+
+                                        <span ng-if="[table.newMember.street]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Corpus:</span>
+
+                                            <input   class="form-control"   style="font-size: 2rem; " ng-model="table.newMember.corpus" > </input>
+
+
+                                        </div>
+
+                                        <span ng-if="[table.newMember.corpus]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Appart:</span>
+
+                                            <input   class="form-control"    style="font-size: 2rem; " ng-model="table.newMember.appart" > </input>
+
+
+                                        </div>
+
+                                        <span ng-if="[table.newMember.appart]==''" class=" warn">Warning field is empty</span>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-12">
-                                        <div class="input-group">
+                                </div>
+                                <div class="consolidation">
+                                <div class="form-group "  >
+                                    <div class="header-consolidation"><h2>School:</h2></div>
+                                    <div class="col-md-6">
+
+                                        <div class="input-group" style="width: 100%" >
+                                            <span class="input-group-addon" style="width: 10%">School:</span>
+
+
+                                            <select class="form-control" ng-model="table.selectedSchool" style="line-height: 20px; width:inherit "  >
+                                                <option value="{{sc.school}}" ng-repeat=" sc in table.getSchool"  >{{sc.school}}</option>
+                                            </select>
+                                        </div>
+                                        <span ng-if="[table.selectedSchool]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                               <!-- </div>
+                                <div class="form-group">-->
+                                    <div class="col-md-6">
+                                        <div class="input-group" style="width: 100%">
                                             <span class="input-group-addon" style="width: 10%">Class:</span>
 
-                                            <textarea   class="form-control"   style="font-size: 2rem; width:60vw; " ng-model="table.newMember.class"  > </textarea>
+                                            <input   class="form-control"   style="font-size: 2rem; width:100%; " ng-model="table.newMember.class"  > </input>
                                         </div>
                                         <span ng-if="[table.newMember.class]==''" class=" warn">Warning field is empty</span>
                                     </div>
                                 </div>
+                                </div>
+                                <div class="consolidation">
                                 <div class="form-group">
+                                    <div class="header-consolidation"><h2>Information:</h2></div>
+
                                     <div class="col-md-12">
                                         <div class="input-group">
                                             <span class="input-group-addon" style="width: 10%">Hobby:</span>
 
-                                            <textarea   class="form-control"   style="font-size: 2rem; width:60vw; " ng-model="table.newMember.hobby" > </textarea>
+                                            <textarea   class="form-control"   style="font-size: 2rem;   " ng-model="table.newMember.hobby" > </textarea>
                                         </div>
                                         <span ng-if="[table.newMember.hobby]==''" class=" warn">Warning field is empty</span>
                                     </div>
@@ -148,20 +484,112 @@
                                         <div class="input-group">
                                             <span class="input-group-addon" style="width: 10%">Activity:</span>
 
-                                            <textarea   class="form-control"    style="font-size: 2rem; width:60vw; "  ng-model="table.newMember.activity"></textarea>
+                                            <textarea   class="form-control"    style="font-size: 2rem;   "  ng-model="table.newMember.activity"></textarea>
                                         </div>
                                         <span ng-if="[table.newMember.activity]==''" class=" warn">Warning field is empty</span>
                                     </div>
                                 </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon " style="width: 10%" >Information:</span>
 
+                                                <textarea   id='inf' class="form-control  "   rows="7" style="font-size: 2rem;  " ng-model="table.newMember.add_inf"> </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.add_inf]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon " style="width: 10%">Profile:</span>
+
+                                                <textarea   class="form-control"   style="font-size: 2rem;  " ng-model="table.newMember.profile"> </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.profile]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Prefer profile:</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;   " ng-model="table.newMember.pref_profile"  > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.pref_profile]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Prefer second:</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;  "  ng-model="table.newMember.pref_profile2" > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.pref_profile2]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Prefer thema:</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;  " ng-model="table.newMember.them_profile" > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.them_profile]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Experence:</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;  " ng-model="table.newMember.experience" > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.experience]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Results of <br>participation<br> in the Olympiads :</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;  " ng-model="table.newMember.results" > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.results]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Name of the <br>teacher who can<br> provide the<br> recommendation:</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;  " ng-model="table.newMember.teacher_recomend" > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.teacher_recomend]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon" style="width: 10%">Past paricipation:</span>
+
+                                                <textarea   class="form-control"    style="font-size: 2rem;  " ng-model="table.newMember.past_participation" > </textarea>
+                                            </div>
+                                            <span ng-if="[table.newMember.past_participation]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                            </div>
 
                             <!--</div>
                             <div class="panel-body">-->
-                                <div class="col-md-4">
-                                    <h4>Member </h4>
-                                    <div class="form-group">
+                                <!--<div class="row" style="height: 20%">
+                                <div class="col-md-4" >
+                                    <div class="consolidation vert"  >
 
-                                        <div class="col-md-9">
+                                    <div class="form-group"  >
+                                        <div class="header-consolidation"><h2>Member:</h2></div>
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Surname</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.surname" />
@@ -171,7 +599,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Name</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.name"/>
@@ -181,7 +609,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Middle name</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.middle_name"/>
@@ -192,17 +620,17 @@
 
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Birthday</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.birthday"/>
+                                                <input type="date" class="form-control" ng-model="table.newMemeberBirthday"/>
                                             </div>
-                                            <span ng-if="[table.newMember.viewItem.birthday]==''" class=" warn">Warning field is empty</span>
+                                            <span ng-if="[table.newMemeberBirthday]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Full years</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.full_years"/>
@@ -212,7 +640,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Phone number</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.phone_number"/>
@@ -220,14 +648,16 @@
                                             <span ng-if="[table.newMember.viewItem.phone_number]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
-
+                                </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <h4>Member's parents </h4>
-                                    <div class="form-group">
+                                <div class="col-md-4"  >
 
-                                        <div class="col-md-9">
+                                    <div class="consolidation vert"  >
+                                    <div class="form-group">
+                                        <div class="header-consolidation"><h2>Member's parents</h2></div>
+
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Parent surname</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.parent_surname"/>
@@ -237,7 +667,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">name</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.parent_name"/>
@@ -247,7 +677,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Parent middle name</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.parent_middle_name"/>
@@ -258,7 +688,7 @@
 
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Phone number</span>
                                                 <input type="text" class="form-control" ng-model="table.newMember.parent_phone"/>
@@ -268,27 +698,33 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <div class="col-md-9">
+                                        <div class="col-md-12">
                                             <div class="input-group">
-                                                <span class="input-group-addon">Phone number</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.parent_email"/>
+                                                <span class="input-group-addon">E-mail</span>
+                                                <input type="email" class="form-control" ng-model="table.newMember.parent_email"/>
                                             </div>
                                             <span ng-if="[table.newMember.viewItem.parent_email]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
 
-
                                 </div>
-                                <div class="col-md-4">
-                                    <h4>Member's characteristics </h4>
-                                    <div class="form-group">
+                                </div>
+                                <div class="col-md-4" >
+                                    <div class="consolidation vert"  >
 
+                                    <div class="form-group">
+                                        <div class="header-consolidation"><h2>Member's characteristics</h2></div>
                                         <div class="col-md-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">English level</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.english_level"/>
+                                                &lt;!&ndash;<input type="text" class="form-control" ng-model="table.newMember.english_level"/>&ndash;&gt;
+                                                <select class="form-control" ng-model="table.selectedEnglish">
+                                                    <option value="{{is.english_level}}" ng-repeat=" is in table.getEnglishLevel"  >{{is.english_level}}</option>
+                                                </select>
+
+
                                             </div>
-                                            <span ng-if="[table.newMember.viewItem.english_level]==''" class=" warn">Warning field is empty</span>
+                                            <span ng-if="[table.selectedEnglish]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
 
@@ -307,9 +743,12 @@
                                         <div class="col-md-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Category</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.category"/>
+                                               &lt;!&ndash; <input type="text" class="form-control" ng-model="table.newMember.category"/>&ndash;&gt;
+                                                <select class="form-control" ng-model="table.selectedCategory">
+                                                    <option value="{{cat.category}}" ng-repeat="cat in table.getCategory">{{cat.category}}</option>
+                                                </select>
                                             </div>
-                                            <span ng-if="[table.newMember.category]==''" class=" warn">Warning field is empty</span>
+                                            <span ng-if="[table.selectedCategory]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -317,9 +756,12 @@
                                         <div class="col-md-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">T-shirt</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.t_shirt"/>
+                                                <select class="form-control" ng-model="table.selectedTShirt">
+                                                    <option value="{{tshirt.t_shirt}}" ng-repeat=" tshirt in table.getTShirtArr"  >{{tshirt.t_shirt}}</option>
+                                                </select>
+                                               &lt;!&ndash; <input type="text" class="form-control" ng-model="table.newMember.t_shirt"/>&ndash;&gt;
                                             </div>
-                                            <span ng-if="[table.newMember.t_shirt]==''" class="help-block">warnings</span>
+                                            <span ng-if="[table.selectedTShirt]=='no information' || [table.selectedTShirt]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -327,7 +769,13 @@
                                         <div class="col-md-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Got acquainted</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.got_acquent"/>
+                                               &lt;!&ndash; <input type="text" class="form-control" ng-model="table.newMember.got_acquent"/>&ndash;&gt;
+
+                                            <select class="form-control" ng-model="table.newMember.got_acquent" required  >
+
+                                                <option value="no" >no</option>
+                                                <option value="yes" >yes</option>
+                                            </select>
                                             </div>
                                             <span ng-if="[table.newMember.viewItem.got_acquent]==''" class=" warn">Warning field is empty</span>
                                         </div>
@@ -337,7 +785,11 @@
                                         <div class="col-md-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Status</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.status"/>
+                                                &lt;!&ndash;<input type="text" class="form-control" ng-model="table.newMember.status"/>&ndash;&gt;
+                                                <select class="form-control" ng-model="table.selectedStatus">
+                                                    <option value="{{status.status}}" ng-repeat=" status in table.getStatus"  >{{status.status}}</option>
+                                                </select>
+
                                             </div>
                                             <span ng-if="[table.newMember.viewItem.status]==''" class=" warn">Warning field is empty</span>
                                         </div>
@@ -347,9 +799,19 @@
                                         <div class="col-md-9">
                                             <div class="input-group">
                                                 <span class="input-group-addon">Contract</span>
-                                                <input type="text" class="form-control" ng-model="table.newMember.contract"/>
+                                                <input type="text" class="form-control" ng-model="table.newMember.contract_number"/>
                                             </div>
-                                            <span ng-if="[table.newMember.viewItem.contract]==''" class=" warn">Warning field is empty</span>
+                                            <span ng-if="[table.newMember.viewItem.contract_number]==''" class=" warn">Warning field is empty</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="col-md-9">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">Date depart. Contract </span>
+                                                <input type="text" class="form-control" ng-model="table.newMember.contract_res"/>
+                                            </div>
+                                            <span ng-if="[table.newMember.viewItem.contract_res]==''" class=" warn">Warning field is empty</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -363,9 +825,9 @@
                                         </div>
                                     </div>
 
-
-
                                 </div>
+                                </div>
+                                </div>-->
                             </div>
 
                             <div class="panel-footer">
@@ -373,15 +835,19 @@
                                 <button class="btn btn-primary pull-right">Submit</button>-->
                             </div>
                         </div>
-                        <div>
+
+
+
+                       <!-- <div>
                             <div class="panel-footer">
 
                                 <button class="btn btn-primary pull-right" type="submit" value="Submit"  >Submit</button>
                             </div>
-                        </div>
+                        </div>-->
 
                     </form>
-                    <button class="btn btn-default" ng-click="table.clearNewMemeber()">Clear Form</button>
+
+
                 </div>
             </div>
 

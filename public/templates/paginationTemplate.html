@@ -1,0 +1,35 @@
+<div    >
+    <div class=" "  >
+
+
+        <!-- pager -->
+       <!-- <ul ng-if="pager.pages.length" class="pagination">
+            <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                <a ng-click="setPage(1)">First</a>
+            </li>
+            <li ng-class="{disabled:pager.currentPage === 1}">
+                <a ng-click="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li ng-repeat="page in pagesArray" ng-class="{active:pager.currentPage === page}">
+                <a ng-click="Page(page)">{{page}}</a>
+            </li>
+            <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                <a ng-click="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li ng-class="{disabled: pager.currentPage ===  pager.totalPages}">
+                <a ng-click=" setPage( pager.totalPages)">Last</a>
+            </li>
+        </ul>-->
+        <div class="btn-group col-md-12" style="text-align: left">
+            <label  >Items {{totalItems}} / Pages {{pages}}/ Current page {{pagerItem+1}} </label>
+
+        </div>
+        <ul class="pagination">
+            <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
+            <li ng-repeat="page in  pagesArray"  >
+                <a id='page{{page.page}}' ng-click="getPage(page.page)">{{page.page}}</a>
+            </li>
+            <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
+        </ul>
+    </div>
+</div>

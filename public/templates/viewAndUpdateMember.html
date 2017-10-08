@@ -1,0 +1,516 @@
+<div id="popUpMsg-bg" ng-show="table.showViewMember.visible" >
+    <div class="page-content-wrap" id="view">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <form class="form-horizontal"    >
+                    <div class="panel panel-default">
+                        <ul class="panel-controls">
+                            <li> <span class="fa fa-times" ng-click="table.closeAddUpMembers()"></span> </li>
+                        </ul>
+                        <div class="panel-heading">
+
+                            <h1 class="panel-title">View Member </h1>
+                            <button id='updateMemberBtn' ng-click="updateMember()" class="btn btn-info" >edit Member</button>
+                            <button id='saveupdateMemberBtn' ng-click="saveupdateMember()" class="btn btn-info" style=" display: none" >save</button>
+
+                        </div>
+                        <div class="panel-body" style="background-color: grey">
+                            <div class="row" style="height: 20%">
+                                <div class="col-md-4" >
+                                    <div class="consolidation vert"  >
+
+                                        <div class="form-group"  >
+                                            <div class="header-consolidation"><h2>Member:</h2></div>
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Surname</span>
+                                                    <input type="text" disabled class="form-control"   ng-model="table.choosingMemberById.surname" />
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Name</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.name"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Middle name</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.middle_name"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Birthday</span>
+                                                    <input type="date" disabled class="form-control"   ng-model="table.choosingMemberById.birthday  " value="table.birthday"  />
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Full years</span>
+                                                    <input type="text" disabled class="form-control" disabled    ng-if="table.choosingMemberById.full_years=='0'" value="no information"/>
+                                                    <input type="text" disabled class="form-control" disabled ng-model="table.choosingMemberById.full_years"  ng-if="table.choosingMemberById.full_years!=''" />
+                                                </div>
+                                                <!--<span ng-if="[table.choosingMemberById.full_years]==''" class=" warn">Warning field is empty</span>-->
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Phone number</span>
+                                                    <input type="text" disabled class="form-control" ng-model=" table.choosingMemberById.phone_number"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4"  >
+
+                                    <div class="consolidation vert"  >
+                                        <div class="form-group">
+                                            <div class="header-consolidation"><h2>Member's parents</h2></div>
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Parent surname</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.parent_surname"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">name</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.parent_name"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Parent middle name</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.parent_middle_name"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Phone number</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.parent_phone"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">E-mail</span>
+                                                    <input type="email" disabled class="form-control" ng-model="table.choosingMemberById.parent_email"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4" >
+                                    <div class="consolidation vert"  >
+
+                                        <div class="form-group">
+                                            <div class="header-consolidation"><h2>Member's characteristics</h2></div>
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">English level</span>
+                                                    <!--<input type="text" class="form-control" ng-model="table.newMember.english_level"/>-->
+                                                    <!--<select class="form-control" ng-model="table.table.choosingMemberById.english_level" disabled >
+                                                        <option value="{{is.english_level}}" ng-repeat=" is in table.getEnglishLevel"  >{{is.english_level}}</option>
+                                                    </select>-->
+
+                                                    <select class="form-control" disabled  ng-model="table.selectedOption" disabled  ng-options="option.english_level for option in table.getEnglishLevel" >
+
+
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Health</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.health"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Category</span>
+
+                                                    <select class="form-control" disabled ng-options="option.category for option in table.getCategory" ng-model="table.selectedOptionCategory">
+                                                        <!--<option value="{{cat.category}}" ng-repeat="cat in table.getCategory">{{cat.category}}</option>-->
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">T-shirt</span>
+                                                    <select class="form-control" disabled ng-model="table.selectedOptionTShirt" ng-options="option.t_shirt for option in table.getTShirtArr" >
+
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Got acquainted</span>
+
+
+                                                    <select class="form-control" disabled ng-model="table.choosingMemberById.got_acquent"   required>
+
+                                                        <option value="no"  >no</option>
+                                                        <option value="yes" >yes</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Status</span>
+
+                                                    <select disabled class="form-control" ng-model="table.selectedOptionStatus" ng-options="option.status for option in table.getStatus">
+
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Contract</span>
+                                                    <input disabled type="text" class="form-control" ng-model="table.choosingMemberById.contract_number"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Date depart. Contract </span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.contract_res"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <div class="col-md-9">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Summ</span>
+                                                    <input type="text" disabled class="form-control" ng-model="table.choosingMemberById.summ"/>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="consolidation">
+                                <div class="header-consolidation"><h2>Address:</h2></div>
+                                <div class="form-group"  >
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Postcode:</span>
+                                            <input  disabled class="form-control" type="text"  style="font-size: 2rem; " ng-model="table.choosingMemberById.postcode" > </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Subject of RF:</span>
+
+                                            <select class="form-control" disabled ng-model="table.selectedOptionSubject" style="font-size: 2rem; line-height: 20px; width:inherit " ng-options="option.RF_subject for option in table.SubjectsOfRussia">
+
+                                            </select>
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">City:</span>
+
+                                            <input  disabled class="form-control"   style="font-size: 2rem; " ng-model="table.choosingMemberById.city" > </input>
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Street:</span>
+
+                                            <input  disabled class="form-control"   style="font-size: 2rem; " ng-model="table.choosingMemberById.street" > </input>
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Corpus:</span>
+
+                                            <input  disabled class="form-control"   style="font-size: 2rem; " ng-model="table.choosingMemberById.corpus" > </input>
+
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-4">
+
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon">Appart:</span>
+
+                                            <input  disabled class="form-control"    style="font-size: 2rem; " ng-model="table.choosingMemberById.appart" > </input>
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="consolidation">
+                                <div class="form-group "  >
+                                    <div class="header-consolidation"><h2>School:</h2></div>
+                                    <div class="col-md-6">
+
+                                        <div class="input-group" style="width: 100%" >
+                                            <span  class="input-group-addon" style="width: 10%">School:</span>
+
+                                            <input   disabled ng-model="search" class="form-control"    style="font-size: 2rem;" placeholder="search..." >
+                                            <select   class="form-control" ng-model="table.selectedOptionSchool" style="line-height: 20px; width:inherit " ng-options="option.school for option in table.getSchool | filter:search"  >
+
+                                            </select>
+                                        </div>
+                                        <span ng-if="[table.selectedSchool]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                    <!-- </div>
+                                     <div class="form-group">-->
+                                    <div class="col-md-6">
+                                        <div class="input-group" style="width: 100%">
+                                            <span class="input-group-addon" style="width: 10%">Class:</span>
+
+                                            <input  disabled class="form-control"   style="font-size: 2rem; width:100%; " ng-model="table.choosingMemberById.class"  > </input>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="consolidation">
+                                <div class="form-group">
+                                    <div class="header-consolidation"><h2>Information:</h2></div>
+
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Hobby:</span>
+
+                                            <textarea  disabled class="form-control"   style="font-size: 2rem;   " ng-model="table.choosingMemberById.hobby" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Activity:</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;   "  ng-model="table.choosingMemberById.activity"></textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon " style="width: 10%" >Information:</span>
+
+                                            <textarea disabled  id='inf' class="form-control  "   rows="7" style="font-size: 2rem;  " ng-model="table.newMember.add_inf"> </textarea>
+                                        </div>
+                                        <span ng-if="[table.newMember.add_inf]==''" class=" warn">Warning field is empty</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon " style="width: 10%">Profile:</span>
+
+                                            <textarea  disabled class="form-control"   style="font-size: 2rem;  " ng-model="table.choosingMemberById.profile"> </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Prefer profile:</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;   " ng-model="table.choosingMemberById.pref_profile"  > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Prefer second:</span>
+
+                                            <textarea disabled  class="form-control"    style="font-size: 2rem;  "  ng-model="table.choosingMemberById.pref_profile2" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Prefer thema:</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;  " ng-model="table.choosingMemberById.them_profile" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Experence:</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;  " ng-model="table.choosingMemberById.experience" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Results of <br>participation<br> in the Olympiads :</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;  " ng-model="table.choosingMemberById.results" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Name of the <br>teacher who can<br> provide the<br> recommendation:</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;  " ng-model="table.choosingMemberById.teacher_recomend" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="width: 10%">Past paricipation:</span>
+
+                                            <textarea  disabled class="form-control"    style="font-size: 2rem;  " ng-model="table.choosingMemberById.past_participation" > </textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="panel-footer">
+                            <!--<button class="btn btn-default">Clear Form</button>
+                            <button class="btn btn-primary pull-right">Submit</button>-->
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div>
+                         <div class="panel-footer">
+
+                             <button class="btn btn-primary pull-right" type="submit" value="Submit"  >Submit</button>
+                         </div>
+                     </div>-->
+
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

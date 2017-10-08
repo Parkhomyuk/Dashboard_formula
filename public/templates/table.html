@@ -3,14 +3,14 @@
 
         <div class="check col-md-2">
 
-            <div class="btn-group">
+            <!--<div class="btn-group">
                 <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Columns<span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li ng-repeat="item in table.settings.columns">
                         <div class="{{table.settings.count.number}}" >
                         <div class="input-group row">
                         <span class="input-group-addon">
-                             <input type="checkbox" aria-label="..." ng-model="item.display"  >
+                             <input type="checkbox" aria-label="..." ng-model="item.display" ng-click="table.changeLocal(item)" >
                           </span>
 
                             <div>{{item.title}}</div>
@@ -19,27 +19,47 @@
                     </li>
 
                 </ul>
-            </div>
+            </div>-->
         </div>
-        <div class="col-md-2">
-            <button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><!--<i class="fa fa-exclamation-circle"   aria-hidden="true"> -->Export to Excel</i></button>
-        </div>
-        <div class="col-md-10"></div>
+       <!-- <div class="col-md-2">
+            <button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()">&lt;!&ndash;<i class="fa fa-exclamation-circle"   aria-hidden="true"> &ndash;&gt;Export to Excel</i></button>
+        </div>-->
+
     </div>
-        <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-8"><h3>{{table.settings.title.title}}  </h3></div>
-        <!--<div class="col-md-3"><button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" (click)="file_xsl()"><i class="fa fa-exclamation-circle" aria-hidden="true">Export to Excel</i></button></div>-->
+    <div class="col-md-8"><h3>{{table.settings.title.title}} <button style='margin-top: 1vh' type="button" class="btn btn-warning btn-icon" ng-click="table.file_xsl()"><!--<i class="fa fa-exclamation-circle"   aria-hidden="true"> -->to Excel</i></button>
+    </h3></div>
+        <div class="row" style="text-align: right; margin-right: 2vw ">
+
+
+
+        <div class="btn-group">
+            <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Columns<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li ng-repeat="item in table.settings.columns" >
+                    <div class="{{table.settings.count.number}}" >
+                        <div class="input-group row">
+                        <span class="input-group-addon">
+                             <input type="checkbox" aria-label="..." ng-model="item.display" ng-click="table.changeLocal(item)"  >
+                          </span>
+
+                            <div>{{item.title}}</div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
         </div>
 
+</div>
 
 
 
-<table class="table table-bordered smarttable" id="tableUser" style="width: 98%" >
+<table class="table table-bordered smarttable"   style="width: 98%" >
 
     <thead>
     <tr>
         <th class="align-right zero" style="border: 1px solid black " >Manage</th>
+        <th class="align-right zero" style="border: 1px solid black " >#</th>
         <th class="align-right" style="border: 1px solid black " ng-repeat="column in table.settings.columns | sortBy | orderBy:'order'" ng-if="column.display">{{column.title}}<br>
                 <span  class="glyphicon glyphicon-chevron-up" aria-hidden="true" ng-click="table.orderByProp( column.db_name+' ASC')">
 
@@ -49,6 +69,7 @@
 
     <tr class="smart">
         <th class="search" style="width: 10%"> <i class="fa fa-plus-circle" aria-hidden="true" ng-click="table.addMembers('add')" style="padding-right: 1vw"></i>|<i class="fa fa-search" aria-hidden="true" style="padding-left: 0.3vw"></i> </th>
+        <th></th>
         <th class="search" ng-repeat="sear in table.settings.columns | sortBy | orderBy:'order'" ng-if="sear.display" style="{{sear.width}}">
             <input #searchBox  class="searchin"   ng-keyup="table.search()"  placeholder={{sear.placeholder}} ng-model="sear.mod_name" ng-if="sear.search"/></th>
     </tr>
@@ -71,6 +92,7 @@
             </div>
 
         </td >
+        <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 0.5px solid #0f0f0f">{{$index+1}}</td>
 
         <td class="first" style="background-color: rgba(219, 226, 189, 0.68); border: 0.5px solid #0f0f0f" ng-repeat="value in table.sortProperties "   >
 
@@ -91,17 +113,18 @@
 
     <div class="row">
 
-            <div class="btn-group col-md-6">
-                <label  >Members {{count}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
 
-            </div>
-            <div class="form-group col-md-6">
-                <label class="col-md-6 control-label">count of rows on page<br><span>*by default 100</span></label>
-                <div class="col-md-6">
-                    <select class="form-control select" data-style="btn-success" ng-model="numberRows" >
+           <!-- <div class="btn-group col-md-6">
+                <label  >Members {{table.countMembersnumb}} / Pages {{numberPages}}/ Current page {{pageNumberView}} </label>
+
+            </div>-->
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-label">count of rows on page <span>*by default {{table.chooseCountNumber[0]}}</span></label>
+                <div class="col-md-3">
+                    <select class="form-control select" data-style="btn-success" ng-model="table.numberRows" >
 
 
-                        <option ng-repeat="count in chooseCountNumber"  >{{count}}</option>
+                        <option ng-repeat="count in table.chooseCountNumber"  >{{count}}</option>
 
                     </select>
                 </div>
@@ -111,14 +134,16 @@
     </div>
 
 
-    <div class="btn-group pull-right">
-        <ul class="pagination" >
+    <div class=" "    >
+
+        <!--<ul class="pagination" >
             <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
             <li ng-repeat="page in arrayCountPage"  >
                 <a ng-click="setPage(page)"    href="#" >{{1}}</a>
             </li>
             <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
-        </ul>
+        </ul>-->
+        <pagdirective></pagdirective>
     </div>
 
 
@@ -132,9 +157,36 @@
 
     <viewmember></viewmember>
     <addmember></addmember>
+    <table class="table table-bordered smarttable" id="tableUser" style="width: 98%" hidden >
+        <caption><h3>{{table.settings.title.title}}  </h3></caption>
+        <thead>
+        <tr>
 
+            <th class="align-right" style="border: 1px solid black " ng-repeat="column in table.settings.columns | sortBy | orderBy:'order'" ng-if="column.display">{{column.title}} </th>
+        </tr>
+
+
+
+
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="item in  table.items "    style="background-color: rgba(60, 235, 237, 0.11)">
+
+
+
+            <td class="first" style="  border: 1px solid #0f0f0f" ng-repeat="value in table.sortProperties "    >
+
+                <p ng-if="value[2]!='Date'">{{item[value[0]]}}</p>
+                <p ng-if="value[2]=='Date'">{{item[value[0]] | date:"dd/MM/yyyy"}}   </p>
+            </td>
+
+
+
+        </tr>
+        </tbody>
+    </table>
 
 </div>
 
 
-</div>
