@@ -3,7 +3,7 @@
     function schoolCtr(Transactions,$scope){
         var vn=this;
         vn.settings = {
-            title: {title: "Members Schools"},
+            title: {title: "Schools"},
 
             columns: {
                 order: {
@@ -26,7 +26,9 @@
                 name:{
                     title: 'Schools',
                     display:true,
-                    db_name:'school'
+                    db_name:'school',
+                    db_key:'school_id',
+                    table_title:'School'
                 },
                 edit:{
                     title: 'edit',
@@ -34,49 +36,46 @@
                 }
             }
         }
+
+
+
         vn.numberRows=10;
         vn.prevNumberRows=0;
         vn.arr=[];
-
-      vn.res=Transactions.getSchool('schools').then(function(data){
+        vn.curAddTable='schools';
+        vn.itemTitle='';
+        vn.itemTitleKey='school';
+        vn.itemKey='school_id';
+        vn.res=function(curAddTable){
+          Transactions.getSchool( curAddTable).then(function(data){
             vn.items=data.data;
            vn.ss=data.data;
 
           for(var i in data.data){
+              data.data[i]['count']=Number(i)+1;
               vn.arr.push(data.data[i]);
           }
             vn.f=data.data;
             vn.itemsA=vn.f.slice(0,vn.numberRows);
-            vn.pagesArray=[];
-         for(var i in data.data){
-                vn.countItems=Number(i)+1;
-            }
-            vn.pages=Math.ceil(vn.countItems/vn.numberRows);
 
-            for(var i=1;i<=vn.pages;i++) {
-                if (i <= 6) {
-                    vn.pagesArray.push({'page': i});
+            if(vn.search==undefined){
+                vn.pagesArray=[];
+                for(var i in data.data){
+                    vn.countItems=Number(i)+1;
+                }
+                vn.pages=Math.ceil(vn.countItems/vn.numberRows);
+
+                for(var i=1;i<=vn.pages;i++) {
+                    if (i <= 6) {
+                        vn.pagesArray.push({'page': i});
+                    }
                 }
             }
 
-        });
 
+        });}
 
-
-        console.log('vn.s1 '+vn.s1);
-        /*vn.getPage=function(item){
-            var prev=vn.numberRows*(item-1);
-            var crows=vn.numberRows*item;
-            vn.f=vn.items;
-            if(item==1){
-                vn.itemsA=vn.f.slice(0,crows);
-            }else {
-                vn.itemsA = vn.f.slice(prev,crows);
-            }
-
-        }*/
-
-
+        vn.res(vn.curAddTable);
     };
 
 

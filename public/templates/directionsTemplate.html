@@ -1,5 +1,25 @@
 <h3 style='margin-left: 1vw'>{{data.settings.title.title}}</h3>
-<div class="grid_table"><button class="btn btn-info">Add data</button> <p></p> <input type="text" placeholder="search" ng-model="search"></div>
+<div class="grid_table"><button class="btn btn-info" ng-click="OpenAddItem(data.settings.columns.name.db_name)">Add data</button>
+    <input type="text" placeholder="search" ng-model="search" value="" id="s" >
+    <p ng-model='data.s1'> Items: {{(data.ss | filter: search).length}} </p>
+
+</div>
+<div class='grid_edit' ng-if="redactor==1"  >
+    <h3 class="title_edit">Edit {{data.settings.title.title}}:</h3>
+     <input class='inpProp_edit' ng-model="curItem[data.settings.columns.name.db_name]" />
+     <button class="btn btn-danger save_edit" ng-click="saveEdit()">Save</button>
+
+     <button class="btn btn-danger save_edit" ng-click="canselEdit()">Cancel</button>
+     <div class="space_edit"></div>
+</div>
+<div class='grid_edit' ng-if="additor==1"  >
+    <h3 class="title_edit">Add  new item</h3>
+    <input class='inpProp_edit' ng-model="data.itemTitle" />
+    <button class="btn btn-danger save_edit" ng-click="addNewItem()">Add</button>
+    <button class="btn btn-danger save_edit" ng-click="canselAdd()">Cansel</button>
+
+    <div class="space_edit"></div>
+</div>
 
     <table>
        <!-- <caption class="titleTable"><h3>{{data.settings.title.title}}</h3> </caption>-->
@@ -9,30 +29,30 @@
             <th ng-repeat="header in data.settings.columns">{{header.title}}</th>
         </tr>
         <tr ng-repeat="(key,value) in data.itemsA | filter: search" ng-model="data.ss"  >
-            <td>{{$index+1}}</td>
+            <td>{{value.count}}</td>
             <td >{{value[data.settings.columns.id.db_name]}}</td>
             <td class="name" >{{value[data.settings.columns.name.db_name]}}</td>
-            <td ><button class="btn btn-danger">Edit</button></td>
+            <td ><button class="btn btn-danger" ng-click="getItemForEdit(key,value)">Edit</button></td>
         </tr>
 
     </table>
 
 <!--zzz{{(data.ss | filter: search).length}}-->
-<p ng-model='data.s1'>{{(data.ss | filter: search).length}}</p>
+
 
     <div>
         <div class=" "  >
 
             <div class="btn-group " style="text-align: left; margin-top: 1vh; margin-left: 1vw">
-                <label  >Items {{data.countItems}} / Pages {{data.pages}}/ Current page {{data.pagerItem+1}} </label>
+                <label  >Items {{data.countItems}} / Pages {{data.pages}}/ Current page {{curItemPage}} </label>
 
             </div>
             <ul class="pagination" style="margin-left: 1vw">
-                <li  ><a   ng-click="pageLeft()"    href="#">Prev</a></li>
+                <li  ><a   ng-click="pageLeft()"     >Prev</a></li>
                 <li ng-repeat="page in  data.pagesArray"  >
                     <a id='page{{page.page}}' ng-click="getPage(page.page)">{{page.page}}</a>
                 </li>
-                <li  ><a  ng-click="pageRight()"   href="#">Next</a></li>
+                <li  ><a  ng-click="pageRight()"    >Next</a></li>
             </ul>
         </div>
     </div>

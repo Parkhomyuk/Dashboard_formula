@@ -27,7 +27,10 @@
             console.log('vmn.countM=count.data[0][i]=>'+vmn.countM);
         });
 
-
+        Transactions.countStatus().then(function(status){
+            vmn.statusMemberDash=status.data;
+            console.log(JSON.stringify(vm.statusMemberDash));
+        });
 
 
 

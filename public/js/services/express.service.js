@@ -215,7 +215,58 @@ serv.countMembers=function(){
         return defferedDirective.promise;
     }
 
+    var defferedaddItemDirective=$q.defer();
+    serv.pushItemDirectib=ve=function(param,item){
+        $http.post('api/members/addDirectionItem/'+param,item).then(function (data) {
+                defferedaddItemDirective.resolve(data);
+            },
+            function error(error){defferedaddItemDirective.reject(error.status)}
+        );
 
+        return defferedaddItemDirective.promise;
+    }
+    var defferedChangeItemDirective=$q.defer();
+    serv.updateItemsDir = function (id,updateItem) {
+
+        $http.put('/api/members/changeDirectionItem/'+id,updateItem)
+            .then(function (modifiItem) {
+                    defferedChangeItemDirective.resolve(modifiItem);
+
+                },
+                function error(error){
+                    defferedChangeItemDirective.reject(error.status);
+                }
+            );
+        return defferedChangeItemDirective.promise;
+    }
+    var defferedCountMembersByDate=$q.defer();
+    serv.countMembersByDate = function () {
+
+            $http.get('/api/members/countdate/')
+                .then(function (modifiItem) {
+                        defferedCountMembersByDate.resolve(modifiItem);
+
+                    },
+                    function error(error){
+                        defferedCountMembersByDate.reject(error.status);
+                    }
+                );
+            return defferedCountMembersByDate.promise;
+        }
+    var defferedCountStatus=$q.defer();
+    serv.countStatus = function () {
+
+        $http.get('/api/members/countStatus/')
+            .then(function (modifiItem) {
+                    defferedCountStatus.resolve(modifiItem);
+
+                },
+                function error(error){
+                    defferedCountStatus.reject(error.status);
+                }
+            );
+        return defferedCountStatus.promise;
+    }
 
 
 

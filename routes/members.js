@@ -208,6 +208,89 @@ router.post('/members/add', function(req, res) {
     });
 
 });
+
+//-------------------------------------------POST&PUT directions tablre------//
+
+router.post('/members/addDirectionItem/:table', function(req, res) {
+    console.log(JSON.stringify(req.body)+' body');
+    console.log(JSON.stringify(req.params)+' params');
+     pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+
+        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){  });
+        connection.query('insert into '+req.params.table+' set ?', req.body,
+            function(err, rows) {
+                if (err) {
+                    throw err;
+                } else {
+                    res.writeHead(200, {
+                        "Content-Type": "application/json"
+                    });
+                    var result = {
+                        success: true,
+                        detail: rows,
+
+                        id: rows.insertId
+
+                    }
+
+                    res.write(JSON.stringify(result));
+                    res.end();
+                }
+
+
+
+                connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ });
+            });
+
+    });
+
+});
+router.put('/members/changeDirectionItem/:id', function(req, res) {
+    console.log(JSON.stringify(req.body)+' body');
+    console.log(JSON.stringify(req.params.id)+' params');
+    console.log(JSON.stringify(req.body.table)+' params');
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+        connection.query('SET FOREIGN_KEY_CHECKS=0',function(){  });
+        connection.query('update '+req.body.table+' set ?    where '+req.body.id_name+' = '+req.params.id, [ req.body.body],
+            function(err, rows) {
+                console.log('update '+req.body.table+' set ?   where '+req.body.id_name+' = '+req.params.id, [ req.body.body]);
+
+                if (err) {
+                    throw err;
+                } else {
+                    res.writeHead(200, {
+                        "Content-Type": "application/json"
+                    });
+                    var result = {
+                        success: true,
+                        detail: rows
+
+                    }
+                    /* console.log(JSON.stringify(result));*/
+                    res.write(JSON.stringify(result));
+                    res.end();
+                }
+                connection.release();
+                connection.query('SET FOREIGN_KEY_CHECKS=1',function(){ connection.release();});
+                connection.destroy();
+            });
+
+
+
+    });
+
+});
+//-------------------------------------------POST directions tablre------//
+
+
+
+
 router.delete('/members/:id', function(req, res) {
    /* console.log(req.params.id+'this is Params id');*/
     pool.getConnection(function(err, connection) {
@@ -748,6 +831,55 @@ router.get('/members/directly/:param', function(req,res){
             connection.release();
         })
     })
-})
+});
+/* GET member count by date. */
+router.get('/members/countdate', function(req, res) {
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+        connection.query(' SELECT  date,   count(date) FROM  members  GROUP BY DATE(date);', function(err, rows) {
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+                res.write(JSON.stringify(rows));
+                /* console.log(JSON.stringify(rows));*/
+                res.end();
+            }
+            connection.release();
+        });
+    });
+});
+router.get('/members/countStatus', function(req, res) {
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            console.error("An error occurred: " + err);
+        }
+        connection.query(' select s.status, count(m.status) from members as m left join status as s on m.status=s.statusid group by s.status ;', function(err, rows) {
+            if (err) {
+                throw err;
+            } else {
+                res.writeHead(200, {
+                    "Content-Type": "application/json"
+                });
+                var result = {
+                    success: true,
+                    rows: rows.length,
+                }
+                res.write(JSON.stringify(rows));
+                /* console.log(JSON.stringify(rows));*/
+                res.end();
+            }
+            connection.release();
+        });
+    });
+});
 module.exports = router;
 

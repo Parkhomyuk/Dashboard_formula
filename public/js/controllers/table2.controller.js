@@ -836,6 +836,12 @@
 
                 $http.get('/api/members/search/' + queryAll).then(function (data) {
                     $scope.items = data.data;
+                    vn.countIt=[];
+                    var c=1;
+                    for(var i in data.data){
+                        vn.countIt.push(c++);
+                    }
+                    console.log(vn.countIt);
 
                 })
             },1000);
@@ -1402,6 +1408,7 @@ console.log('vn.choosingMemberById resp'+JSON.stringify(vn.choosingMemberById));
         $scope.getPageController= function(item){
             console.log('current page '+item);
             vn.pageNumber=item;
+
             vn.refresh();
         }
         vn.refresh();

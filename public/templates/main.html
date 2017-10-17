@@ -13,7 +13,15 @@
                    <div>
                        <div class="widget-title">Total Members</div>
                        <div class="widget-subtitle">{{dashboard.clock| date : format :'yyyy.mm.dd'}}</div>
-                       <div class="widget-int"></div>
+                       <div class="widget-subtitle statusItem" style="display: grid; grid-template-columns: 3fr 1fr; font-weight: bold" ng-repeat="status in dashboard.statusMemberDash">
+
+                                <div style="text-align: left">{{status.status}}</div>
+
+                               <div>{{status['count(m.status)']}}</div>
+                           </tr>
+                           </table>
+                       </div>
+
                    </div>
                   <!-- <div>
                        <div class="widget-title">Returned</div>
@@ -41,7 +49,7 @@
                    <!--<span class="fa fa-envelope" style="margin-left: 0"></span>-->
                </div>
                <div class="widget-data">
-                   <div class="widget-int num-count">48</div>
+                   <div class="widget-int num-count">4</div>
                    <div class="widget-title">New messages</div>
                    <div class="widget-subtitle">In your mailbox</div>
                </div>
@@ -176,6 +184,7 @@
                            </ul>
                        </li>
                    </ul>
+
                </div>
                <div class="panel-body padding-0">
                    <div class="chart-holder" id="dashboard-donut-2" style="height: 200px;"></div>
@@ -239,29 +248,66 @@
         <!--    END VISITORS BLOCK-->
     </div>
 </row>
+    <row >
+        <div class="col-md-8"  style="" ng-controller="chartController as chart">
+            <!--  START VISITORS BLOCK-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title-box">
+                        <h3>{{chart.title}}</h3>
+                        <span>{{chart.subtitle}}</span>
+                    </div>
+
+                </div>
+                <div class="panel-body padding-0">
+                    <div class="chart-holder" id="dashboard-area-6" style="height: 200px;"></div>
+                </div>
+            </div>
+            <!--    END VISITORS BLOCK-->
+        </div>
+        <div class="col-md-4"  style="" ng-controller="chart2Controller as chart">
+            <!--  START VISITORS BLOCK-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title-box">
+                        <h3>{{chart.title}}</h3>
+                        <span>{{chart.subtitle2}}</span>
+                    </div>
+
+                </div>
+                <div class="panel-body padding-0">
+                    <div class="chart-holder" id="dashboard-area-7" style="height: 200px;"> </div>
+
+                </div>
+            </div>
+            <!--    END VISITORS BLOCK-->
+        </div>
+    </row>
+
+<!--
+    START DASHBOARD CHART
+    <div class="chart-holder" id=" ashboard-area-6"   >
 
 
-  <!--  START DASHBOARD CHART-->
-   <div class="chart-holder" id="dashboard-area-6" style="height: 200px;"></div>
-   <div class="block-full-width">
-
-       <div class="panel panel-default">
-           <div class="panel-heading">
-
-               <!-- START DASHBOARD CHART -->
-               <div class="chart-holder" id="dashboard-area-1" style="height: 200px;"></div>
-               <div class="block-full-width">
-                   <div id="tester" style="width:600px;height:250px;"></div>
-               </div>
-               <!-- END DASHBOARD CHART -->
-
-           <div class="panel-body padding-0">
-               <div class="chart-holder" id="dashboard-donut-3" style="height: 200px;"></div>
-           </div>
-       </div>
+        <div class="panel panel-default" ng-controller="chartController as chart">
+            <div class="panel-heading">
+                <h1> {{chart.title}} </h1>
+                <div class="chart-holder" id="dashboard-area-1"  ></div>
+                START DASHBOARD CHART
+                <div class="chart-holder" id="dashboard-area-1" style="height: 200px;"></div>
+                <div class="block-full-width">
+                    <div id="tester" style="width:600px;height:250px;"></div>
+                </div>
+                END DASHBOARD CHART
 
 
-   </div>
-   <!-- END DASHBOARD CHART-->
+                <div class="panel-body padding-0">
+                    <div class="chart-holder" id="dashboard-donut-3" style="height: 200px;"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    END DASHBOARD CHART-->
 </div>
     </div>

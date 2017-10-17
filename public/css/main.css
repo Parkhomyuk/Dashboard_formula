@@ -463,7 +463,7 @@ Grid directories*/
 .grid .table-directions{
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: wheat;
+  background-color: #efeeee;
 }
 /*
 Table Directions*/
@@ -498,4 +498,112 @@ Table Directions*/
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   text-align: center;
+}
+.grid_edit{
+  position: absolute; width: 20vw; height:15vh; background-color: rgba(84, 84, 84, 0.78); margin: 5vh 8vh 3vw 4vw; border-radius: 5px; border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  text-align: left;
+  grid-template-areas:
+  "title title title title title title"
+  "input input input input input input"
+  "save cansel cansel space space space"
+}
+.title_edit{
+  grid-area: title;
+  color:white;
+  margin-left: 10%;
+}
+.hProp_edit{
+  grid-area: header;
+  color:white;
+}
+.inpProp_edit{
+  grid-area:input;
+  width: 90%;
+  font-size: 1.5rem;
+  margin-right:  5%;
+}
+.save_edit{
+  grid-are: save;
+  margin-top: 1vh;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.cansel_edit{
+  grid-area: cansel;
+  margin-top: 1vh;
+
+}
+.space_edit{
+  grid-area: space;
+  margin-top: 1vh;
+  z-index: 1000;
+}
+.grid_edit div{
+  width: inherit; height: auto; margin-left: 1vw; display: inline-block;
+}
+/*
+movile navigation*/
+.x-nav{
+  height: inherit;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.mob{
+  margin-right: 2vw;
+}
+.x-nav ul{
+  padding-bottom: 1vh;
+}
+
+/*
+charts*/
+.axis path, .axis line {
+  fill: none;
+  stroke: #333;
+}
+.axis .grid-line {
+  stroke: #000;
+  stroke-opacity: 0.2;
+}
+.axis text {
+  font: 10px Verdana;
+  color: #1caf9a;
+}
+.dot {
+  stroke: #1caf9a;
+  fill: #1caf9a;
+}
+.x-axis{
+  color: #1caf9a;
+}
+.arc path {
+  stroke: #000;
+}
+/*
+import file style*/
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+
+}
+
+/*
+dasbord style*/
+.statusItem{
+  text-align: left;
 }

@@ -1,7 +1,13 @@
-<h1 style="margin-left: 2vw;color:blue">{{title}}</h1>
-<input type="file" id="file" name="file" import-sheet-js="" multiple="false"/>
-<button ng-click="add()">Add</button>
-  <button style="margin: 0vw 0vw 1vw 2vw; " class="btn btn-primary">Add all new</button>
+<h1 style="margin-left: 2vw;color:darkblue">{{title}}</h1>
+<form class="form-inline" style="display: grid; grid-template-columns: 1fr 1fr 10fr; margin-bottom: 1vh">
+
+    <div class="fileUpload btn btn-primary">
+        <span  >Upload</span>
+<input type="file" id="file" name="file" import-sheet-js="" multiple="false" class="upload"/>
+    </div>
+<button style="  " class="btn btn-info" ng-click="add()">Add</button>
+    <div></div>
+</form>
 <table class="table table-bordered smarttable" style="width: 80%; ">
     <tr>
 
